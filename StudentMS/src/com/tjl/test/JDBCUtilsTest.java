@@ -21,16 +21,18 @@ public class JDBCUtilsTest {
 		
 		Statement statement = conn.createStatement();
 		
-		ResultSet result = statement.executeQuery("select * from test_teacher");
+		ResultSet result = statement.executeQuery("select * from "+JDBCUtils.getForm());
 		
 		while (result.next()) {
 			
 			//这里表单项的名称需要正确填写（所打开的表单项名称）
 			
-			System.out.print(result.getInt("tt_id")+" ");
-			System.out.println(result.getString("tt_name"));
+			System.out.print(result.getInt("id")+" ");
+			System.out.println(result.getString("uname"));
 			
 		}
+		
+		
 		
 	}
 	

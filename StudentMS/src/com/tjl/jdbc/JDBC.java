@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 //这是JDBC工具构建的思路
 //实现的方法已经封装到JDBCUtils.java这个工具类中
-//需要修改数据库和账号时，只需要修改db.properties即可
+//需要修改数据库/账号/表单等，只需要修改db.properties即可
 
 public class JDBC {
 
@@ -31,11 +31,12 @@ public class JDBC {
 			System.out.println("驱动加载失败");
 		}
 		
-		//第二步·连接数据库			"jdbc:mysql://localhost:3306/你的数据库名"为固定写法
+		//第二步·连接数据库			"jdbc:mysql://localhost:3306/你的数据库名"为你的url地址的固定写法
+		//后面要加上?useUnicode=true&characterEncoding=utf8，这样数据库传输中文时不会乱码
 		
 		try {
 			
-			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8","root","");
 			System.out.println("数据库连接成功");
 			
 			//第三步·创建执行环境		

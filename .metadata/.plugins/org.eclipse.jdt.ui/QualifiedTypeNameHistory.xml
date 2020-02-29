@@ -7,4 +7,6 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.lang.Class"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="com.tjl.bean.User"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

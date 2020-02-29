@@ -13,7 +13,7 @@ import javax.naming.spi.DirStateFactory.Result;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-import com.mysql.jdbc.Statement;
+import java.sql.Statement;
 
 //这是JDBC完整的开发工具类
 //调用此类时会自动加载驱动
@@ -26,6 +26,7 @@ public class JDBCUtils {
 	
 	private static String driver;
 	private static String url;
+	private static String form;
 	private static String username;
 	private static String password;
 	
@@ -54,6 +55,7 @@ public class JDBCUtils {
 		
 		driver = p.getProperty("driver");
 		url = p.getProperty("url");
+		form=p.getProperty("form");
 		username = p.getProperty("username");
 		password = p.getProperty("password");
 		
@@ -122,6 +124,47 @@ public class JDBCUtils {
 		}
 		
 	}
+
+
+	public static String getDriver() {
+		return driver;
+	}
+
+
+	public static void setDriver(String driver) {
+		JDBCUtils.driver = driver;
+	}
+
+
+	public static String getUrl() {
+		return url;
+	}
+
+
+	public static void setUrl(String url) {
+		JDBCUtils.url = url;
+	}
+
+
+	public static String getForm() {
+		return form;
+	}
+
+
+	public static void setForm(String form) {
+		JDBCUtils.form = form;
+	}
+
+
+	public static String getUsername() {
+		return username;
+	}
+
+
+	public static void setUsername(String username) {
+		JDBCUtils.username = username;
+	}
+	
 	
 	
 

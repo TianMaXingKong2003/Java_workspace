@@ -36,7 +36,7 @@ public class View {
         System.out.println("**********\t3.修改学生信息\t***********");
         System.out.println("**********\t4.查询学生信息\t***********");
         boolean flag = true;
-        int num = -1;
+        int num = 5;
         while(flag){
             //转换为整型，这里只能使用nextLine，不能使用nextInt，否则会直接跳转到下一个输入
             num = Integer.parseInt(input.nextLine());
