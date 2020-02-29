@@ -1,0 +1,24 @@
+package com.tjl.jdbc;
+
+public class JDBC {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		
+		//加载MySQL的驱动
+		//"com.mysql.jdbc.Driver"为驱动固定名称
+		//添加一个lib文件夹到src下，把驱动文件放到lib里，然后对驱动文件右键构建路径
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("驱动加载成功");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("驱动加载失败");
+		}
+		
+			
+
+	}
+
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="productsys"
+  id="myeclipse.1289351916546"
+  context-root="/productsys"
+  j2ee-spec="5.0"
+  archive="productsys.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

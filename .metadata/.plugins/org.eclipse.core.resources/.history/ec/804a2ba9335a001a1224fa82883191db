@@ -1,0 +1,22 @@
+package com.tjl.jdbc;
+
+public class JDBC {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		
+		//加载MySQL的驱动
+		
+		try {
+			Class.forName("com.mysq.jdbc.Driver");
+			System.out.println("驱动加载成功");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("驱动加载失败");
+		}
+		
+			
+
+	}
+
+}

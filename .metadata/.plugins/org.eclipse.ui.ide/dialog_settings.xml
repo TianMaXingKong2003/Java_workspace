@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="E:\Java_workspace\SupermarketMangeSystem\productsys"/>
+		<item value="C:\Users\62549\Desktop\赵悦鑫毕设\servelt超市管理系统（功能很多，商品进销存）\productsys"/>
+		<item value="C:\Users\62549\eclipse-workspace\First_Java"/>
+	</list>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+</section>
