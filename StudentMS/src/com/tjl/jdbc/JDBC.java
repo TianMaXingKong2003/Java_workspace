@@ -6,6 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
+//这是JDBC工具构建的思路
+//实现的方法已经封装到JDBCUtils.java这个工具类中
+//需要修改数据库和账号时，只需要修改db.properties即可
+
 public class JDBC {
 
 	public static void main(String[] args) {
@@ -43,6 +48,8 @@ public class JDBC {
 			ResultSet result = statement.executeQuery("select * from test_detail");
 			
 			//显示你查询的结果
+			
+			//这个部分封装到了测试类中JDBCUtilsTest.java
 			
 			while (result.next()) {
 				
