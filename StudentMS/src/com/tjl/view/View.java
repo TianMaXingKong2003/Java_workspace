@@ -90,6 +90,9 @@ public class View {
         System.out.println("**********\t请输入新密码：\t***********");
         String upass = input.nextLine();
         System.out.println("***********************************");
+        
+        System.out.println(uname+"\t"+upass);
+        
         return new User(uname,upass);
     }
 
@@ -105,6 +108,29 @@ public class View {
         System.out.println("***********************************");
         return uname;
     }
+    
+    /**输出用户信息
+     * @return 用户的全部信息（仅管理员权限使用）
+     */
+    public  static String printUser(User user) {
+		
+    	String print_info="ID："+user.getId()+"\t用户名："+user.getUname()+"\t用户密码："+user.getUpass()+"\t用户权限：";
+    	
+    	
+    	switch (user.getType()) {
+		case 1:
+			print_info+="管理员";
+			break;
+		case 2:
+			print_info+="学生";
+			break;
+		default:
+			break;
+		}
+    	
+    	
+    	return print_info;
+	}
 
     /**
      * 学生菜单界面

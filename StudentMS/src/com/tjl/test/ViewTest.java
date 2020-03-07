@@ -21,5 +21,13 @@ public class ViewTest {
 		System.out.println(View.managerMenuView());
 	}
 
-
+	public void updateMenuViewTest() throws Exception {
+	
+		User user =View.updateMenuView();
+		
+		System.out.println(user);
+	}
+	
+	
+	
 }

@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.ClassCircularityError"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.lang.Class"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="com.tjl.dao.UserDao"/>
+<fullyQualifiedTypeName name="com.tjl.dao.UserDao_Implement"/>
+<fullyQualifiedTypeName name="com.tjl.view.View"/>
 <fullyQualifiedTypeName name="com.tjl.bean.User"/>
+<fullyQualifiedTypeName name="com.bookms.util.JDBCUtils"/>
+<fullyQualifiedTypeName name="com.bookms.model.User"/>
+<fullyQualifiedTypeName name="com.bookms.view.MainPage"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="com.bookms.view.InterPage"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="javax.websocket.Session"/>
+<fullyQualifiedTypeName name="org.apache.catalina.Session"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="com.itheima.util.C3P0Util"/>
+<fullyQualifiedTypeName name="javax.servlet.Servlet"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+<fullyQualifiedTypeName name="javax.media.Player"/>
+<fullyQualifiedTypeName name="javax.media.Manager"/>
+<fullyQualifiedTypeName name="com.xu.music.player.player.XMusic"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.metal.MetalBorders.PaletteBorder"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.awt.FileDialog"/>
+<fullyQualifiedTypeName name="java.awt.Frame"/>
+<fullyQualifiedTypeName name="java.applet.AudioClip"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="Music.audioplay"/>
+<fullyQualifiedTypeName name="player.MusicPlayer"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="com.music.jdbc.JDBCUtils"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
 </qualifiedTypeNameHistroy>

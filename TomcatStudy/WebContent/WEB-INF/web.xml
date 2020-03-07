@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>TomcatStudy</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 配置Servlet  固定格式的写法1-->
+  <!--class名自定义，class要填写完整路径，mapping进行映射 -->
+  <!-- 如果servlet添加了之后网页却是404错误或者500错误，请检查class路径，或者添加servlet的jar包 -->
+  
+  <servlet>
+  		<servlet-name>demo1</servlet-name>
+  		<servlet-class>cn.itcast.web.servlet.ServletDemo1</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  		<servlet-name>demo1</servlet-name>
+  		<url-pattern>/demo1</url-pattern>
+  </servlet-mapping>
+  
+
+
+
+	<!-- 配置Servlet  固定格式的写法2-->
+	
+	<servlet>
+	  		<servlet-name>demo2</servlet-name>
+	  		<servlet-class>cn.itcast.web.servlet.ServletDemo2</servlet-class>
+	  		
+	  		<!-- 自定义Servlet创建时机
+	  			1.第一次被访问时，创建
+	  					<load-on-startup>的值为负数
+	  			2.在服务器启动时，创建
+	  					<load-on-startup>的值为0或正数0-10
+	  		 -->
+	  		
+	  		<load-on-startup>-5</load-on-startup>
+	  		
+	  		
+	  </servlet>
+
+  <servlet-mapping>
+  		<servlet-name>demo2</servlet-name>
+  		<url-pattern>/demo2</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+</web-app>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+			<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+			"http://mybatis.org/dtd/mybatis-3-config.dtd">
+			<configuration>
+			<typeAliases>
+				<typeAlias type="wyp.bean.Person" alias="Person" />
+				<typeAlias type="wyp.bean.Company" alias="Company" />
+				<typeAlias type="wyp.bean.Employee" alias="Employee" />
+			</typeAliases>
+				<environments default="development">
+					<environment id="development">
+						<transactionManager type="JDBC"></transactionManager>
+						<dataSource type="POOLED">
+							<property name="driver" value="oracle.jdbc.driver.OracleDriver" /> 
+							<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" /> 
+							<property name="username" value="scott" />
+							<property name="password" value="WYP996620wyp" />
+						</dataSource>
+					</environment>
+				</environments>
+				
+				<mappers>
+					<mapper resource="wyp/dao/PersonMapper.xml"/>
+					<mapper resource="wyp/dao/CompanyMapper.xml"/>
+					<mapper resource="wyp/dao/EmployeeMapper.xml"/>
+				</mappers>
+				
+			</configuration>

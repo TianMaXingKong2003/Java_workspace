@@ -21,6 +21,11 @@ import javax.sound.sampled.Line;
 public class UserDao_Implement implements UserDao {
 	
 	//注意：MySQL语法中表名要带单引号，java传参时不要加引号
+	
+	
+	//注意：下列MySQL语句需要根据你的表和表项进行修改	
+	
+	
 
 	//MySQL语句—带参检索表格某个值		几个问号说明这几个地方是参数，后面可以进行修改，?要用英文的
 	private static final String SQL_USER_LOGIN="SELECT type FROM user WHERE uname=? and upass=?";
