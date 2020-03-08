@@ -1,5 +1,6 @@
 package cn.itcast.web.servlet;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -17,6 +18,12 @@ public class HttpServletDemo extends HttpServlet{
 		
 		
 		System.out.println("get请求");
+		
+		//获取get方式请求参数
+		System.out.println("请求参数："+req.getQueryString());
+		
+		//获取客户机的IP地址：
+		System.out.println("客户机的IP地址："+req.getRemoteAddr());
 		
 	}
 	

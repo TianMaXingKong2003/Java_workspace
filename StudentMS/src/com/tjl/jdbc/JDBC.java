@@ -7,50 +7,50 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-//ÕâÊÇJDBC¹¤¾ß¹¹½¨µÄË¼Â·
-//ÊµÏÖµÄ·½·¨ÒÑ¾­·â×°µ½JDBCUtils.javaÕâ¸ö¹¤¾ßÀàÖĞ
-//ĞèÒªĞŞ¸ÄÊı¾İ¿â/ÕËºÅ/±íµ¥µÈ£¬Ö»ĞèÒªĞŞ¸Ädb.properties¼´¿É
+//è¿™æ˜¯JDBCå·¥å…·æ„å»ºçš„æ€è·¯
+//å®ç°çš„æ–¹æ³•å·²ç»å°è£…åˆ°JDBCUtils.javaè¿™ä¸ªå·¥å…·ç±»ä¸­
+//éœ€è¦ä¿®æ”¹æ•°æ®åº“/è´¦å·/è¡¨å•ç­‰ï¼Œåªéœ€è¦ä¿®æ”¹db.propertieså³å¯
 
 public class JDBC {
 
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		
 		
-		//²¶»ñÒì³£µÄĞ´·¨£¬ÈÃÈí¼ş¸ü¼ÓºÏÀí
+		//æ•è·å¼‚å¸¸çš„å†™æ³•ï¼Œè®©è½¯ä»¶æ›´åŠ åˆç†
 		try {
 			
-			//µÚÒ»²½¡¤¼ÓÔØMySQLµÄÇı¶¯		"com.mysql.jdbc.Driver"ÎªÇı¶¯¹Ì¶¨Ãû³Æ
-			//Ìí¼ÓÒ»¸ölibÎÄ¼ş¼Ğµ½srcÏÂ£¬°ÑÇı¶¯ÎÄ¼ş·Åµ½libÀï£¬È»ºó¶ÔÇı¶¯ÎÄ¼şÓÒ¼ü¹¹½¨Â·¾¶
+			//ç¬¬ä¸€æ­¥Â·åŠ è½½MySQLçš„é©±åŠ¨		"com.mysql.jdbc.Driver"ä¸ºé©±åŠ¨å›ºå®šåç§°
+			//æ·»åŠ ä¸€ä¸ªlibæ–‡ä»¶å¤¹åˆ°srcä¸‹ï¼ŒæŠŠé©±åŠ¨æ–‡ä»¶æ”¾åˆ°libé‡Œï¼Œç„¶åå¯¹é©±åŠ¨æ–‡ä»¶å³é”®æ„å»ºè·¯å¾„
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Çı¶¯¼ÓÔØ³É¹¦");
+			System.out.println("é©±åŠ¨åŠ è½½æˆåŠŸ");
 								
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			System.out.println("Çı¶¯¼ÓÔØÊ§°Ü");
+			System.out.println("é©±åŠ¨åŠ è½½å¤±è´¥");
 		}
 		
-		//µÚ¶ş²½¡¤Á¬½ÓÊı¾İ¿â			"jdbc:mysql://localhost:3306/ÄãµÄÊı¾İ¿âÃû"ÎªÄãµÄurlµØÖ·µÄ¹Ì¶¨Ğ´·¨
-		//ºóÃæÒª¼ÓÉÏ?useUnicode=true&characterEncoding=utf8£¬ÕâÑùÊı¾İ¿â´«ÊäÖĞÎÄÊ±²»»áÂÒÂë
+		//ç¬¬äºŒæ­¥Â·è¿æ¥æ•°æ®åº“			"jdbc:mysql://localhost:3306/ä½ çš„æ•°æ®åº“å"ä¸ºä½ çš„urlåœ°å€çš„å›ºå®šå†™æ³•
+		//åé¢è¦åŠ ä¸Š?useUnicode=true&characterEncoding=utf8ï¼Œè¿™æ ·æ•°æ®åº“ä¼ è¾“ä¸­æ–‡æ—¶ä¸ä¼šä¹±ç 
 		
 		try {
 			
 			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8","root","");
-			System.out.println("Êı¾İ¿âÁ¬½Ó³É¹¦");
+			System.out.println("æ•°æ®åº“è¿æ¥æˆåŠŸ");
 			
-			//µÚÈı²½¡¤´´½¨Ö´ĞĞ»·¾³		
+			//ç¬¬ä¸‰æ­¥Â·åˆ›å»ºæ‰§è¡Œç¯å¢ƒ		
 			
 			Statement statement = conn.createStatement();
 			
-			//Í¨¹ıSQLÓï¾äµÃµ½²éÑ¯½á¹û¼¯ºÏ		"SQLÓï¾ä"(selectÑ¡Ôñ  *ËùÓĞ  from´Ó  test_detail±í)
-			//¿ÉÒÔÏÈÔÚNavicatµÄ²éÑ¯Àï²âÊÔÒ»ÏÂÄãµÄÓï¾ä
+			//é€šè¿‡SQLè¯­å¥å¾—åˆ°æŸ¥è¯¢ç»“æœé›†åˆ		"SQLè¯­å¥"(selecté€‰æ‹©  *æ‰€æœ‰  fromä»  test_detailè¡¨)
+			//å¯ä»¥å…ˆåœ¨Navicatçš„æŸ¥è¯¢é‡Œæµ‹è¯•ä¸€ä¸‹ä½ çš„è¯­å¥
 			
 			ResultSet result = statement.executeQuery("select * from test_detail");
 			
-			//ÏÔÊ¾Äã²éÑ¯µÄ½á¹û
+			//æ˜¾ç¤ºä½ æŸ¥è¯¢çš„ç»“æœ
 			
-			//Õâ¸ö²¿·Ö·â×°µ½ÁË²âÊÔÀàÖĞJDBCUtilsTest.java
+			//è¿™ä¸ªéƒ¨åˆ†å°è£…åˆ°äº†æµ‹è¯•ç±»ä¸­JDBCUtilsTest.java
 			
 			while (result.next()) {
 				
@@ -59,9 +59,9 @@ public class JDBC {
 			}
 			
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
-			System.out.println("Êı¾İ¿âÁ¬½ÓÊ§°Ü");
+			System.out.println("æ•°æ®åº“è¿æ¥å¤±è´¥");
 		}
 			
 

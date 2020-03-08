@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="gbk">
-<!-- 写成gbk就不会出现中文乱码了 -->
-<title>helloasdf</title>
-</head>
+<head><title>helloasdf</title></head>
 <body>
 
 	<table>hello html--------</table>
 	
-	<td>测试中文会不会乱码</td>
-    
-    <input type="text" name="这是一个输入框："/>
+	<td>这是一段中文测试，看看会不会乱码</td>
     
     
-    <!-- 测试一下post请求 -->>
-    <!-- 注意路径要写对 -->]>
-    
-    <form action="/TomcatStudy/httpdemo"  method="post">
+    <!-- 测试一下get请求 --><!-- 注意路径要写对 -->
+  
+    <form action="/TomcatStudy/httpdemo"  method="get">
     		<input name="username"/>
     		<input type="submit" value="提交">
     </form>
+ 
+    
+    <!-- 测试一下referer查看链接源头 -->
+    
+    <a href="http://tianmaxingkong.qicp.vip/TomcatStudy/RequestDemo1">点击跳转到RquestDemo1</a>
+    
+    
+    <!-- 测试一下post请求 -->
+    
+    <form action="/TomcatStudy/RequestDemo1" method="post">
+    
+    		<input type="text"  placeholder="请输入用户名" name="username"><br>
+    		<input type="text"  name="password"><br>
+    		
+    		<input type="checkbox" name="hobby" value="game">游戏
+    		<input type="checkbox" name="hobby" value="study">学习<br>
+    		
+    		<input type="submit" value="注册" >
+   </form>
+    
     				
 </body>
-
-
 </html>

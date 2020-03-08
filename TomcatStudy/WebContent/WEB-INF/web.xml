@@ -9,53 +9,21 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  
-  
-  <!-- 配置Servlet  固定格式的写法1-->
-  <!--class名自定义，class要填写完整路径，mapping进行映射 -->
-  <!-- 如果servlet添加了之后网页却是404错误或者500错误，请检查class路径，或者添加servlet的jar包 -->
-  
   <servlet>
-  		<servlet-name>Demo1</servlet-name>
-  		<servlet-class>cn.itcast.web.servlet.ServletDemo1</servlet-class>
+    <servlet-name>Demo1</servlet-name>
+    <servlet-class>cn.itcast.web.servlet.ServletDemo1</servlet-class>
   </servlet>
-
   <servlet-mapping>
-  		<servlet-name>Demo1</servlet-name>
-  		<url-pattern>/Demo1</url-pattern>
+    <servlet-name>Demo1</servlet-name>
+    <url-pattern>/Demo1</url-pattern>
   </servlet-mapping>
-
-
-
-	<!-- 配置Servlet  固定格式的写法2-->
-	
-	<servlet>
-	  		<servlet-name>Demo2</servlet-name>
-	  		<servlet-class>cn.itcast.web.servlet.ServletDemo2</servlet-class>
-	  		
-	  		<!-- 自定义Servlet创建时机
-	  			1.第一次被访问时，创建
-	  					<load-on-startup>的值为负数
-	  			2.在服务器启动时，创建
-	  					<load-on-startup>的值为0或正数0-10
-	  		 -->
-	  		
-	  		<load-on-startup>-5</load-on-startup>
-	  </servlet>
-
-	  <servlet-mapping>
-	  		<servlet-name>Demo2</servlet-name>
-	  		<url-pattern>/Demo2</url-pattern>
-	  </servlet-mapping>
-  
-  
-  	<!-- 配置ServletDemo3的写法通过注解完成，请查看ServletDemo3.java文件-->
-   
-	  
-  
-  
-  
-  
-  
+  <servlet>
+    <servlet-name>Demo2</servlet-name>
+    <servlet-class>cn.itcast.web.servlet.ServletDemo2</servlet-class>
+    <load-on-startup>-5</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Demo2</servlet-name>
+    <url-pattern>/Demo2</url-pattern>
+  </servlet-mapping>
 </web-app>
