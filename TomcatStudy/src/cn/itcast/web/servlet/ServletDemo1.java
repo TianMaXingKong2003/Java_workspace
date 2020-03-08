@@ -13,7 +13,7 @@ public class ServletDemo1 implements Servlet{
 	@Override		//销毁方法		服务器正常关闭的时候执行，执行一次
 	public void destroy() {
 		// TODO 自动生成的方法存根
-		System.out.println("服务器正常关闭，Servlet执行销毁方法");
+		System.out.println("服务器正常关闭，ServletDemo1执行销毁方法");
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class ServletDemo1 implements Servlet{
 	public void init(ServletConfig config) throws ServletException {
 		// TODO 自动生成的方法存根
 		
-		System.out.println("Servlet执行初始化方法");
+		System.out.println("ServletDemo1执行初始化方法");
 		
 	}
 
@@ -40,7 +40,7 @@ public class ServletDemo1 implements Servlet{
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 		// TODO 自动生成的方法存根
 		
-		System.out.println("Servlet执行service方法");
+		System.out.println("ServletDemo1执行service方法");
 	}
 
 }

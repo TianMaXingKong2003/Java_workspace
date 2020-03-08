@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="com.itheima.util.C3P0Util"/>
 <fullyQualifiedTypeName name="javax.servlet.Servlet"/>
-<fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 <fullyQualifiedTypeName name="javax.media.Player"/>
 <fullyQualifiedTypeName name="javax.media.Manager"/>
 <fullyQualifiedTypeName name="com.xu.music.player.player.XMusic"/>
@@ -36,4 +35,7 @@
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="com.music.jdbc.JDBCUtils"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="javax.servlet.GenericServlet"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 </qualifiedTypeNameHistroy>
