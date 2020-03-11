@@ -69,6 +69,16 @@ public class RequestDemo1 extends HttpServlet {
 				
 				System.out.println("用户的从"+referer+"访问链接");
 				
+				
+				//（常用）获取请求参数的通用方式
+				
+				//不论get还是post请求方式都可以使用下列方法来获取请求参数
+				
+				//1.String getParameter(String name):根据参数名称获取参数值    username=zs&password=123
+				//2.String[] getParameterValues(String name):根据参数名称获取参数值的数组  hobby=xx&hobby=game
+				//3.Enumeration<String> getParameterNames():获取所有请求的参数名称
+				//4.Map<String,String[]> getParameterMap():获取所有参数的map集合
+				
 	}
 
 	

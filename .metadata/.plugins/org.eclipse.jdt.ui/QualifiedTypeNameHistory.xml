@@ -24,7 +24,6 @@
 <fullyQualifiedTypeName name="javax.media.Manager"/>
 <fullyQualifiedTypeName name="com.xu.music.player.player.XMusic"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.metal.MetalBorders.PaletteBorder"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.awt.FileDialog"/>
 <fullyQualifiedTypeName name="java.awt.Frame"/>
 <fullyQualifiedTypeName name="java.applet.AudioClip"/>
@@ -38,4 +37,7 @@
 <fullyQualifiedTypeName name="javax.servlet.GenericServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
