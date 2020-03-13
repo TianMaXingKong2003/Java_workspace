@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    
+    <script>
+    /*
+    分析：点击超链接或者图片，需要换一张
+        1.给超链接和图片绑定单击事件
+
+        2.重新设置图片的src属性值
+	 */
+
+	 window.onload = function(){
+	        //1.获取图片对象
+	        var img = document.getElementById("checkcode");
+	        //2.绑定单击事件
+	        img.onclick = function(){
+	            //加时间戳
+	            var date = new Date().getTime();
+
+                img.src = "/TomcatStudy/CheckCodeServlet?"+date;
+            }
+	 }
+
+    </script>
+    
+</head>
+<body>
+
+    <form action="/TomcatStudy/LoginServlet" method="post">
+        用户名:<input type="text" name="username" placeholder="请输入用户名" > <br>
+        密码:<input type="password" name="password"><br>
+        <input type="submit" value="登录">
+    </form>
+    
+    
+    <img id="checkcode" src="/TomcatStudy/CheckCodeServlet" />
+    <a id="change" href="">看不清换一张？</a>
+    
+</body>
+</html>
