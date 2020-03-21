@@ -1114,3 +1114,25 @@ org.eclipse.core.runtime.CoreException: ∆Ù∂Ø≈‰÷√ MusicPlayerTest “˝”√≤ª¥Ê‘⁄µƒœÓƒ
 2020-03-14 12:00:46,998 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2020-03-14 12:00:47,901 [Worker-19: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
 2020-03-14 12:00:48,030 [Worker-19: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\1\store
+2020-03-14 22:30:19,804 [Worker-9: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-03-14 22:45:08,027 [Worker-22: Publishing to Tomcat v8.5 Server at localhost...] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
+2020-03-14 23:56:33,263 [Worker-38: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\1\store
+2020-03-15 16:49:55,973 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-03-15 16:50:18,035 [Worker-5: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
+2020-03-15 16:50:18,111 [Worker-5: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\1\store
+2020-03-15 20:42:00,439 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-03-15 20:42:06,484 [main] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
+2020-03-15 22:13:26,205 [main] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\1\store
+2020-03-16 15:45:56,553 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-03-17 13:10:40,852 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-03-17 18:14:32,746 [main] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
+2020-03-18 11:43:54,446 [Worker-9: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-03-18 11:52:59,725 [main] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
+2020-03-18 11:53:00,548 [main] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\1\store
+2020-03-19 19:20:25,801 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-03-19 23:38:20,577 [Worker-10: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-03-19 23:43:42,485 [Worker-3: Updating status for Tomcat v8.5 Server at localhost...] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
+2020-03-19 23:47:30,051 [main] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\1\store
+2020-03-20 09:50:29,228 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-03-21 17:27:20,258 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-03-21 17:40:28,499 [main] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
