@@ -29,14 +29,31 @@
 <body>
 
     <form action="/TomcatStudy/LoginServlet" method="post">
-        用户名:<input type="text" name="username" placeholder="请输入用户名" > <br>
-        密码:<input type="password" name="password"><br>
-        <input type="submit" value="登录">
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" name="username" placeholder="请输入用户名" ></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>验证码</td>
+                <td><input type="text" name="checkCode"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><img id="checkcode" src="/TomcatStudy/CheckCodeServlet" />
+                    <a id="change" href="">看不清换一张？</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="登录"></td>
+            </tr>
+        </table>        
+        
     </form>
     
-    
-    <img id="checkcode" src="/TomcatStudy/CheckCodeServlet" />
-    <a id="change" href="">看不清换一张？</a>
     
 </body>
 </html>

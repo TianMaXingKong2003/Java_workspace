@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -50,19 +51,53 @@ public class LoginServlet extends HttpServlet {
 		User user = dao.login(loginuser);
 		
 		//5.判断user
-		if (user==null) {
-			System.out.println("登录失败");
+		HttpSession session = request.getSession();
+		String checkCode_session = (String) session.getAttribute("checkCode_session");
+		String checkCode=loginuser.getCheckCode();
+		//删除session中的验证码（为了安全）
+		session.removeAttribute("checkCode_session");
+		//首先判断验证码是否正确
+		System.out.print("当前的验证码："+checkCode_session);
+		System.out.println("\t用户提交的验证码："+checkCode);
+		if (checkCode_session!=null && checkCode_session.equalsIgnoreCase(checkCode)) {
+			//忽略大小写比较字符串
+			//判断账号信息和数据库进行的比较
 			
-			//转发到
-			request.getRequestDispatcher("/FailServlet").forward(request, response);
+			if (user==null) {
+				System.out.println("登录失败");
+				
+				//转发到
+				//request.getRequestDispatcher("/FailServlet").forward(request, response);
+				
+				//存储提示信息到request
+				request.setAttribute("login_error", "用户名或密码错误");
+				//转发到登录页面
+				request.getRequestDispatcher("/login.jsp").forward(request, response);
+				
+			}else {
+				System.out.println("登录成功");
+				//存储数据 request.setAttribute("user", user);
+				//转发 request.getRequestDispatcher("/SuccessServlet").forward(request, response);
+				
+				//存储数据到session
+				session.setAttribute("user", user);
+				//重定向到新的页面
+				String contextPath = request.getContextPath();//动态获取虚拟目录
+		        response.sendRedirect(contextPath+"/success.jsp");
+				
+				
+			}
 			
 		}else {
-			System.out.println("登录成功");
-			//存储数据
-			request.setAttribute("user", user);
-			//转发到
-			request.getRequestDispatcher("/SuccessServlet").forward(request, response);
+			//验证码不一致
+			
+			//存储提示信息到request
+			request.setAttribute("checkCode_error", "验证码错误");
+			//转发到登录页面
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
 		}
+		
+		
 	}
 
 	/**

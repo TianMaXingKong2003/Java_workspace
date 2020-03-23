@@ -9,6 +9,8 @@ public class User {
 	private String username;
 	
 	private String password;
+	
+	private String checkCode;
 
 	public int getId() {
 		return id;
@@ -34,9 +36,18 @@ public class User {
 		this.password = password;
 	}
 
+	public String getCheckCode() {
+		return checkCode;
+	}
+
+	public void setCheckCode(String checkCode) {
+		this.checkCode = checkCode;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", checkCode=" + checkCode
+				+ "]";
 	}
 	
 

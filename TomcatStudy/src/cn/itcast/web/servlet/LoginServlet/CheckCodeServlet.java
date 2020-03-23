@@ -1,6 +1,7 @@
 package cn.itcast.web.servlet.LoginServlet;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -32,31 +33,36 @@ public class CheckCodeServlet extends HttpServlet {
 		//2.美化图片
         //2.1 填充背景色
         Graphics g = image.getGraphics();//画笔对象
-        g.setColor(Color.PINK);//设置画笔颜色
+        g.setColor(Color.gray);//设置画笔颜色
         g.fillRect(0,0,width,height);
  
         //2.2画边框
         g.setColor(Color.BLUE);
         g.drawRect(0,0,width - 1,height - 1);
 
-        String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789";
+        String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         //生成随机角标
         Random ran = new Random();
-
+        //创建一个字符流
+        StringBuilder sbu=new StringBuilder();
         for (int i = 1; i <= 4; i++) {
             int index = ran.nextInt(str.length());
             //获取字符
-            char ch = str.charAt(index);//随机字符
+            char ch = str.charAt(index);//随机字符 
+            sbu.append(ch);//装入sbu中
             //2.3写验证码
             g.drawString(ch+"",width/5*i,height/2);
         }
-
+        //把验证码的值存入Session
+        String checkCode_session=sbu.toString();
+        request.getSession().setAttribute("checkCode_session", checkCode_session);
+        
         //2.4画干扰线
         g.setColor(Color.GREEN);
 
         //随机生成坐标点
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 6; i++) {
             int x1 = ran.nextInt(width);
             int x2 = ran.nextInt(width);
 
