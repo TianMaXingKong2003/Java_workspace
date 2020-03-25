@@ -1142,3 +1142,12 @@ org.eclipse.core.runtime.CoreException: ∆Ù∂Ø≈‰÷√ MusicPlayerTest “˝”√≤ª¥Ê‘⁄µƒœÓƒ
 2020-03-23 10:51:04,861 [Worker-15: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2020-03-23 10:51:48,011 [Worker-15: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2020-03-23 11:20:56,091 [Worker-20: Publishing to Tomcat v8.5 Server at localhost...] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
+2020-03-23 12:24:19,492 [main] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\1\store
+2020-03-24 12:22:00,463 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-03-24 12:23:28,546 [Worker-14: Publishing to Tomcat v8.5 Server at localhost...] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
+2020-03-24 17:03:40,650 [main] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\2\store
+2020-03-25 00:14:48,916 [Worker-101: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\5\store
+2020-03-25 11:49:55,861 [Worker-13: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-03-25 11:49:56,936 [Worker-16: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\0\store
+2020-03-25 11:49:57,089 [Worker-16: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\1\store
+2020-03-25 16:01:29,581 [Worker-46: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: E:\Java_workspace\.metadata\com.genuitec.eclipse.webclipse.livepreview\2\store
