@@ -24,7 +24,6 @@ public class HttpServletDemo extends HttpServlet{
 		
 		//获取客户机的IP地址：
 		System.out.println("客户机的IP地址："+req.getRemoteAddr());
-		
 	}
 	
 	
