@@ -10,15 +10,16 @@ import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sun.media.jfxmedia.track.Track.Encoding;
+
 import tools.WordGenerator;
 
-/**
- * Servlet implementation class DownloadServlet
- */
+@WebServlet("/downloadServlet")
 public class DownloadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -42,41 +43,46 @@ public class DownloadServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		//1.同步编码格式，防止中文乱码
+		request.setCharacterEncoding("utf-8");
+
+		//2.获取请求里的所有参数
 	     Map<String, Object> map = new HashMap<String, Object>();  
 	     Enumeration<String> paramNames = request.getParameterNames();  
-	     // 閫氳繃寰幆灏嗚〃鍗曞弬鏁版斁鍏ラ敭鍊煎鏄犲皠涓�  
+	     // 通过循环将表单参数放入键值对映射中  
 	     while(paramNames.hasMoreElements()) {  
 	         String key = paramNames.nextElement();  
 	         String value = request.getParameter(key);  
 	         map.put(key, value);  
+	         //System.out.print(key+"\t"); System.out.print(request.getParameter(key)+"\t");
 	     }  
-	     	// 鎻愮ず锛氬湪璋冪敤宸ュ叿绫荤敓鎴怶ord鏂囨。涔嬪墠搴斿綋妫�鏌ユ墍鏈夊瓧娈垫槸鍚﹀畬鏁�  
-	        // 鍚﹀垯Freemarker鐨勬ā鏉垮紩鎿庡湪澶勭悊鏃跺彲鑳戒細鍥犱负鎵句笉鍒板�艰�屾姤閿� 杩欓噷鏆傛椂蹇界暐杩欎釜姝ラ浜�  
+	     	// 提示：在调用工具类生成Word文档之前应当检查所有字段是否完整  
+	        // 否则Freemarker的模板引擎在处理时可能会因为找不到值而报错 这里暂时忽略这个步骤了  
 	        File file = null;  
 	        InputStream fin = null;  
 	        ServletOutputStream out = null;  
 	        try {  
-	            // 璋冪敤宸ュ叿绫籛ordGenerator鐨刢reateDoc鏂规硶鐢熸垚Word鏂囨。  
+	        	// 调用工具类WordGenerator的createDoc方法生成Word文档   
 	            file = WordGenerator.createDoc(map, "resume");  
 	            fin = new FileInputStream(file);  
 	              
 	            response.setCharacterEncoding("utf-8");  
 	            response.setContentType("application/msword");  
-	            // 璁剧疆娴忚鍣ㄤ互涓嬭浇鐨勬柟寮忓鐞嗚鏂囦欢榛樿鍚嶄负resume.doc  
+	            // 设置浏览器以下载的方式处理该文件默认名为resume.doc   
 	            response.addHeader("Content-Disposition", "attachment;filename=resume.doc");  
 	              
 	            out = response.getOutputStream();  
-	            byte[] buffer = new byte[512];  // 缂撳啿鍖�  
+	            byte[] buffer = new byte[512];  // 缓冲区
 	            int bytesToRead = -1;  
-	            // 閫氳繃寰幆灏嗚鍏ョ殑Word鏂囦欢鐨勫唴瀹硅緭鍑哄埌娴忚鍣ㄤ腑  
+	            // 通过循环将读入的Word文件的内容输出到浏览器中
 	            while((bytesToRead = fin.read(buffer)) != -1) {  
 	                out.write(buffer, 0, bytesToRead);  
 	            }  
 	        } finally {  
 	            if(fin != null) fin.close();  
 	            if(out != null) out.close();  
-	            if(file != null) file.delete(); // 鍒犻櫎涓存椂鏂囦欢  
+	            if(file != null) file.delete(); // 删除临时文件
 	        }  
 	} 
 //        WordUtils.exportMillCertificateWord(request,response,map);  

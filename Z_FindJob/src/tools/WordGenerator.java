@@ -18,10 +18,10 @@ public class WordGenerator {
     static {  
         configuration = new Configuration();  
         configuration.setDefaultEncoding("utf-8");  
-        configuration.setClassForTemplateLoading(WordGenerator.class, "/wyp/tools");  
+        configuration.setClassForTemplateLoading(WordGenerator.class, "../tools");  
         allTemplates = new HashMap<>(); 
         try {  
-            allTemplates.put("resume", configuration.getTemplate("resume.ftl"));  
+            allTemplates.put("resume", configuration.getTemplate("resume.ftl","utf-8"));  
         } catch (IOException e) {  
             e.printStackTrace();  
             throw new RuntimeException(e);  
@@ -37,8 +37,8 @@ public class WordGenerator {
         File f = new File(name);  
         Template t = allTemplates.get(type);  
         try {  
-            // 杩欎釜鍦版柟涓嶈兘浣跨敤FileWriter鍥犱负闇�瑕佹寚瀹氱紪鐮佺被鍨嬪惁鍒欑敓鎴愮殑Word鏂囨。浼氬洜涓烘湁鏃犳硶璇嗗埆鐨勭紪鐮佽�屾棤娉曟墦寮�  
-            Writer w = new OutputStreamWriter(new FileOutputStream(f), "utf-8");  
+        	// 这个地方不能使用FileWriter因为需要指定编码类型否则生成的Word文档会因为有无法识别的编码而无法打开  
+        	Writer w = new OutputStreamWriter(new FileOutputStream(f), "utf-8");  
             t.process(dataMap, w);  
             w.close();  
         } catch (Exception ex) {  

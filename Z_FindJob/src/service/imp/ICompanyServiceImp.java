@@ -48,13 +48,50 @@ public class ICompanyServiceImp implements ICompanyService{
 		
 	}
 
-	@Override
+    @Override
+	/* 带参数显示所有公司的招聘信息
+	 * 返回List集合
+	 */
 	public List<Company> listAllCompaniesByParams(Map<String, String> map) {
-		// TODO Auto-generated method stub
-		SqlSession session = MyBatisSqlSessionFactory.getSqlSessionFactory();
-		ICompanyDao companyDao = session.getMapper(ICompanyDao.class);
-		List<Company> companies = companyDao.findCompaniesByParams(map);
-		return companies;	
+	
+		try {
+			 //1.编写sql
+	        String sql = "select * from company where pubtime is not null ";
+	        
+	        for(Map.Entry<String, String> entry : map.entrySet()){
+	            String mapKey = entry.getKey();
+	            String mapValue = entry.getValue();
+	            System.out.println(mapKey+":"+mapValue);
+	            
+	            if("trade".equals(mapKey))		sql+=" and trade="+"\""+mapValue+"\"";
+	            
+	            if("salary".equals(mapKey))		sql+=" and salary="+"\""+mapValue+"\"";
+	            
+	            if("pubtime".equals(mapKey))		sql+=" and STR_TO_DATE( "+mapValue+", '%Y-%m-%d %H:%i:%s') ";
+	        }
+	        
+	        System.out.println(sql);
+	        
+	        System.out.println("\"\"");       //利用转义字符
+	        
+            //2.调用list方法
+           
+            List<Company> companies = template.query(sql,  
+                    new BeanPropertyRowMapper<Company>(Company.class));  
+          
+          System.out.println("查看返回的结果");
+          
+            
+    		for (Company company : companies) {
+    			System.out.println(company);
+    		}
+            
+    		return companies;
+            
+        } catch (DataAccessException e) {
+            //e.printStackTrace();//记录日志
+            return null;
+        }
 	}
 
 	@Override

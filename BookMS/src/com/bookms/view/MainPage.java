@@ -94,16 +94,45 @@ public class MainPage extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
+		//基本数据维护
 		JMenu menu = new JMenu("\u57FA\u672C\u6570\u636E\u7EF4\u62A4");
 		menu.setIcon(new ImageIcon(MainPage.class.getResource("/images/base.png")));
 		menu.setBackground(Color.LIGHT_GRAY);
 		menuBar.add(menu);
 		
+			//图书类别管理
 		JMenu menu_2 = new JMenu("\u56FE\u4E66\u7C7B\u522B\u7BA1\u7406");
 		menu_2.setIcon(new ImageIcon(MainPage.class.getResource("/images/bookTypeManager.png")));
 		menu.add(menu_2);
 		
+				//图书类别添加
 		JMenuItem menuItem_1 = new JMenuItem("\u56FE\u4E66\u7C7B\u522B\u6DFB\u52A0");
+		menuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				//InterPage interPage = new InterPage();
+				BookTypeAddInterFrm btainterpage = new BookTypeAddInterFrm();
+				
+				//interPage.setExtendedState(JFrame.MAXIMIZED_BOTH);//窗体最大化
+				
+				btainterpage.setVisible(true);
+				
+				
+				table.add(btainterpage);			//打开内部窗体
+				
+				
+				//JInternalFrame窗口最大化，需要在添加到JFrame的DesktopPane之后设置
+				
+				
+				try {
+					btainterpage.setMaximum(false);
+				} catch (PropertyVetoException e) {
+					// TODO 自动生成的 catch 块
+					e.printStackTrace();
+				}
+				
+			}
+		});
 		menuItem_1.setIcon(new ImageIcon(MainPage.class.getResource("/images/add.png")));
 		menu_2.add(menuItem_1);
 		
@@ -115,6 +144,7 @@ public class MainPage extends JFrame {
 		menuItem_3.setIcon(new ImageIcon(MainPage.class.getResource("/images/delete.png")));
 		menu_2.add(menuItem_3);
 		
+			//图书管理
 		JMenu menu_3 = new JMenu("\u56FE\u4E66\u7BA1\u7406");
 		menu_3.setIcon(new ImageIcon(MainPage.class.getResource("/images/bookManager.png")));
 		menu.add(menu_3);
@@ -135,6 +165,7 @@ public class MainPage extends JFrame {
 		menuItem_7.setIcon(new ImageIcon(MainPage.class.getResource("/images/search.png")));
 		menu_3.add(menuItem_7);
 		
+			//安全退出
 		JMenuItem menuItem = new JMenuItem("\u5B89\u5168\u9000\u51FA");
 		menuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -153,11 +184,13 @@ public class MainPage extends JFrame {
 		menuItem.setIcon(new ImageIcon(MainPage.class.getResource("/images/exit.png")));
 		menu.add(menuItem);
 		
+		//关于我们
 		JMenu menu_1 = new JMenu("\u5173\u4E8E\u6211\u4EEC");
 		menu_1.setIcon(new ImageIcon(MainPage.class.getResource("/images/about.png")));
 		menu_1.setBackground(Color.LIGHT_GRAY);
 		menuBar.add(menu_1);
 		
+			//作者栏
 		JMenuItem menuItem_2 = new JMenuItem("\u4F5C\u8005\uFF1A\u5929\u9A6C\u884C\u7A7A");
 		menuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

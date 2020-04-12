@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.bookms.model.BookType;
-import com.java1234.util.StringUtil;
+import com.bookms.util.StringUtil;
 
 
 /**

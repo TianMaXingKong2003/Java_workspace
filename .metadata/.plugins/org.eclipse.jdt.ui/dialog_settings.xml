@@ -45,11 +45,12 @@
 	</section>
 	<section name="FatJarPackageWizard">
 		<item value="E:\Java_workspace" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="APP - Netease Cloud Music" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="C:\Users\62549\Desktop\bookms.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="Client - mp3-master" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="C:\Users\62549\Desktop\Music.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
 		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\62549\Desktop\Music.jar"/>
 			<item value="C:\Users\62549\Desktop\bookms.jar"/>
 		</list>
 		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
@@ -60,6 +61,8 @@
 	<section name="RenameInformationPopup">
 	</section>
 	<section name="completion_proposal_size">
+		<item value="318" key="size.y"/>
+		<item value="687" key="size.x"/>
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item value="false" key="SortOrdering"/>

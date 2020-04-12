@@ -169,11 +169,11 @@
 			data:$("#fm").serialize(),
 			success:function(data){
 				console.log(data);
-				if(data=='该用户名已存在！'){
-					$("#validate").html(data);
+				if(data=='false'){
+					$("#validate").html('该用户名已经存在，请重新输入！');
 				}else{
 					alert("注册成功！");
-					window.open ('/WYP/login.jsp','_top');
+					window.open ('/Z_FindJob/login.jsp','_top');
 				}
 			}
 		});		

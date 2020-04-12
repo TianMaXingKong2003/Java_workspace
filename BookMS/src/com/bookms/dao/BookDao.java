@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.java1234.model.Book;
-import com.java1234.util.StringUtil;
+import com.bookms.model.Book;
+import com.bookms.util.StringUtil;
 
 /**
  * Õº ÈDao¿‡

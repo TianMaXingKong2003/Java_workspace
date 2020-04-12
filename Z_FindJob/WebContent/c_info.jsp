@@ -1,4 +1,4 @@
-<%@page import="service.imp.IPersonServiceImp,bean.*"%>
+<%@page import="service.imp.IPersonServiceImp,cn.itcast.domain.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!doctype html>

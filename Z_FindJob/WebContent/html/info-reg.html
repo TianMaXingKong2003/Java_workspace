@@ -17,7 +17,7 @@
 
 <body>
 <div class="title">
-	<h2>个人信息注册(*为必填项)</h2>
+	<h2>个人de 信息注册(*为必填项)</h2>
 </div>		
 <form id="fm">
 <div class="main">
@@ -136,6 +136,7 @@
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="../js/WdatePicker.js"></script>
 <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+
 <script type="text/javascript">
 	showRemind('input[type=text], textarea','placeholder');
 	
@@ -145,16 +146,16 @@
 	          username: {
 	              required: true,
 	              minlength: 4,
-	              maxlength: 10
+	              maxlength: 15
 	          },
 	          password: {
 	             required:true,
-	             digits:true,
-	             minlength:6
+				 maxlength:15,
+				 minlength:6
 	          },
 	          repassword:{
 	        	  required:true,
-		          digits:true,
+				  maxlength:15,
 		          minlength:6,
 		          equalTo:"[name='password']"
 	          },
@@ -178,18 +179,20 @@
 	      messages: {
 	          username: {
 	              required: "*不能为空！",
-	              maxlength: $.validator.format( "长度不得大于10个字符！" ),
+	              maxlength: $.validator.format( "长度不得大于15个字符！" ),
 	          	  minlength: $.validator.format( "长度不得小于4个字符！" )
 	          },
 	          password: {
 	              required: "*密码不能为空！",
-	              digits:"*密码必须是数字!",
-				  minlength:"*密码长度不得低于6位!"
+	            
+				  minlength:"*密码长度不得低于6位!",
+				  maxlength:"*密码长度最大15位!"
 		      },
 		      repassword:{
 					required:"*确认密码不能为空!",
-					digits:"密码必须是数字!",
+					
 					minlength:"密码长度不得低于6位!",
+					maxlength:"*密码长度最大15位!",
 					equalTo:"两次密码不一致!"
 				},
 	          name: {
@@ -210,7 +213,7 @@
 			  }
 	      },
           submitHandler: function(form) {  
-              validate();  //用自定义函数提交表单  
+			  validate();  //用自定义函数提交表单  
           } 
 	  });
 	
@@ -223,11 +226,12 @@
 			data:$("#fm").serialize(),
 			success:function(data){
 				console.log(data);
-				if(data=='该用户名已存在！'){
-					$("#validate").html(data);
+				if(data=='false'){ 
+					alert("该用户名已存在！");
+					$("#validate").html('该用户名已存在！');
 				}else{
 					alert("注册成功！");
-					window.open ('/WYP/login.jsp','_top');
+					window.open ('/Z_FindJob/login.jsp','_top');
 				}
 			}
 		});		

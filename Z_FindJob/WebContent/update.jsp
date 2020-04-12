@@ -21,7 +21,7 @@
 <div class="title">
 	<h2>个人信息修改(*为必填项)</h2>
 </div>		
-<form id="fm" method="post" action="updateServlet">
+<form id="fm" method="post" action="/Z_FindJob/updateServlet">
 <div class="main">
 	<p class="short-input ue-clear">
     	<label>*姓名：</label>
@@ -59,7 +59,7 @@
     	<label>个人评价：</label>
         <textarea name="tip" >${person.tip }</textarea>
     </p>
-    <input name="type" type="hidden" value="个人">
+    <input name="type" type="hidden" value="person">
     <div class="btn ue-clear">
 		<input style="height:50px;width:150px;background-color:#68B86C;color:white;border-radius:10px" type="submit" value="修改"/>
 	</div>

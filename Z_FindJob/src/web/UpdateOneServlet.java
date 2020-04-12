@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Company;
-import bean.Person;
+import cn.itcast.domain.Company;
+import cn.itcast.domain.Person;
 import service.imp.ICompanyServiceImp;
 
 /**

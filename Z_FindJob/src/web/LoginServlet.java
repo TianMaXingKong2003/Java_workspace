@@ -42,6 +42,10 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//1.同步编码格式，防止中文乱码
+		request.setCharacterEncoding("utf-8");
+		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String remember = request.getParameter("rem");
@@ -59,9 +63,15 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(type);
 		System.out.println("LoginServlet");
 		
+		
 		if("person".equals(type)){
-			Person person = new IPersonServiceImp().login(username, password);
+			
+			Person person =null;
+			person = new IPersonServiceImp().login(username, password);
+			System.out.print(username);System.out.print("\t\t");System.out.println(password);
+				
 			if(person == null||"admin".equals(person.getPhone())){
+				
 				response.sendRedirect("login.jsp");
 			}else {
 				session.setAttribute("person",person);

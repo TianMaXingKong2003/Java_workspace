@@ -1,6 +1,8 @@
 package service.imp;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -21,27 +23,54 @@ public class IPersonServiceImp implements IPersonService {
 	 //声明JDBCTemplate对象共用
     private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
-	@Override
+	
+	/**
+     * 注册方法	测试通过
+     * @param person
+     * @return 
+     */
+    @Override
 	public boolean register(Person person) {
-		// TODO Auto-generated method stub
-		SqlSession session = MyBatisSqlSessionFactory.getSqlSessionFactory();
-		IPersonDao personDao = session.getMapper(IPersonDao.class);
-		Person p = personDao.findPersonByName(person.getUsername());
+		
+		Person p=null;
+		try {
+			//1.编写sql
+			String sql = "select * from person where username= ?";
+			//2.调用query方法
+			p = template.queryForObject(sql,
+			        new BeanPropertyRowMapper<Person>(Person.class),
+			        person.getUsername());
+		} catch (DataAccessException e) {
+			p =null;
+		}
+		
 		if(p==null){
-			personDao.savePerson(person);
-			session.commit();
+        	System.out.println("开始存储对象");
+			//存储该用户
+
+//        	//获取系统时间——注册时间
+        	SimpleDateFormat sdf_Time=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        	String registerTime=sdf_Time.format(new Date());
+    		
+        	String InsertSql="INSERT INTO person VALUES ( id, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, STR_TO_DATE( ?, '%Y-%m-%d %H:%i:%s'), ?)";
+        	template.update(InsertSql,person.getUsername(),person.getPassword(),person.getName(),
+        											person.getSex(),person.getBirthday(),person.getSchool(),
+        											person.getPhone(),person.getEmail(),person.getTrade(),
+        											person.getSalary(),person.getTip(),registerTime,person.getEducation());
 			return true;
 		}else{
 			return false;
 		}
+    
 	}
 
-	@Override	
+		
 	/**
      * 登录方法	测试通过
      * @param login 只有用户名和密码
      * @return Person包含用户全部数据,没有查询到，返回null
      */
+    @Override
 	public Person login(String username, String password) {
 		
 		try {
@@ -53,21 +82,37 @@ public class IPersonServiceImp implements IPersonService {
                     new BeanPropertyRowMapper<Person>(Person.class),
                     username, password);
 
+            System.out.println("登录成功");
             return person;
             
         } catch (DataAccessException e) {
             //e.printStackTrace();//记录日志
+        	System.out.println("登录失败");
             return null;
         }
 	}
 
+    
+    /**
+     * 修改信息	测试通过	
+     * @param person
+     * @return 
+     */
 	@Override
 	public void update(Person person) {
-		// TODO Auto-generated method stub
-		SqlSession session = MyBatisSqlSessionFactory.getSqlSessionFactory();
-		IPersonDao personDao = session.getMapper(IPersonDao.class);
-		personDao.updatePerson(person);
-		session.commit();
+		
+    	System.out.println("开始存储对象");
+		//存储该用户
+    	
+
+		String InsertSql="UPDATE person SET NAME=? ,SEX=? ,BIRTHDAY=? ,SCHOOL=? ,PHONE=? ,EMAIL=? ,TRADE=? ,"+
+		"SALARY=? ,TIP=? ,EDUCATION=?  WHERE USERNAME=?";
+		
+		
+    	template.update(InsertSql,person.getName(),person.getSex(),person.getBirthday(),
+    			person.getSchool(),person.getPhone(),person.getEmail(),person.getTrade(),person.getSalary(),
+    			person.getTip(),person.getEducation(),person.getUsername());
+
 	}
 
 	@Override

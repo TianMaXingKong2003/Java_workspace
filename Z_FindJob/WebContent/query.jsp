@@ -67,15 +67,16 @@
             	</select>
             </div>
         </div>
-        <div class="conditions time ue-clear">
+        <!-- 
+ <div class="conditions time ue-clear">
             <label>截止时间：</label>
             <div class="time-select">
             	<input name="pubtime" type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})"/>
                 <i class="icon"></i>
             </div>
-        </div>
+        </div>-->
         <!--注意！传递type参数  -->
-        <input name="type" type="hidden" value="个人">
+        <input name="type" type="hidden" value="person">
     </div>
     <div class="query-btn ue-clear">
 		<input style="background-color:#68B86C;color:white;border-radius:10px" type="submit" value="查询"/>

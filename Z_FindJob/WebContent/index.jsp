@@ -35,8 +35,8 @@
                 	<li class="index"><div class="nav-header"><a href="javascript:;" date-src="query.jsp" class="ue-clear"><span>首页</span></a></div></li>
                     <li class="modify"><div class="nav-header"><a href="javascript:;" date-src="update.jsp" class="ue-clear"><span>个人信息修改</span></a></div>
                     <li class="download"><div class="nav-header"><a href="javascript:;" date-src="download.jsp" class="ue-clear"><span>下载简历</span></a></div></li>
-                    <li class="publish"><div class="nav-header"><a href="javascript:;" date-src="publishServlet?type=个人" class="ue-clear"><span>发布简历</span></a></div></li>
-                    <li class="delete"><div class="nav-header"><a href="javascript:;" date-src="cancleServlet?type=个人" class="ue-clear"><span>撤销简历</span></a></div></li>
+                    <li class="publish"><div class="nav-header"><a href="javascript:;" date-src="publishServlet?type=person" class="ue-clear"><span>发布简历</span></a></div></li>
+                    <li class="delete"><div class="nav-header"><a href="javascript:;" date-src="cancleServlet?type=person" class="ue-clear"><span>撤销简历</span></a></div></li>
                 	<li class="email"><div class="nav-header"><a href="javascript:;" date-src="myCompany.jsp" class="ue-clear"><span>消息通知</span></a></div></li>
                  </ul>
             </div>

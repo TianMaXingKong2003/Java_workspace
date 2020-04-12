@@ -40,7 +40,7 @@
 				}
 			}
 		}
-		System.out.print("登录页面");
+		System.out.print("login.jsp");
 	%>
 	<div id="container">
 		<div id="bd">
@@ -107,7 +107,7 @@ function checkRemember($this){
 function tiaozhuan(){
 	var type=$("input[name='type']:checked").val();
 	console.log(type)
-	if(type=="个人")
+	if(type=="person")
 		location.href="html/register.html"
 	else
 		location.href="html/c_register.html"
