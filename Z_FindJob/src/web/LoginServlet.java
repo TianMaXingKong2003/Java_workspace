@@ -70,7 +70,7 @@ public class LoginServlet extends HttpServlet {
 			person = new IPersonServiceImp().login(username, password);
 			System.out.print(username);System.out.print("\t\t");System.out.println(password);
 				
-			if(person == null||"admin".equals(person.getPhone())){
+			if(person == null){
 				
 				response.sendRedirect("login.jsp");
 			}else {
@@ -78,8 +78,12 @@ public class LoginServlet extends HttpServlet {
 				response.sendRedirect("index.jsp");
 			}
 		}
-		if("business".equals(type)){
-			Company company = new ICompanyServiceImp().login(username, password);
+		if("company".equals(type)){
+			
+			Company company=null;
+			company = new ICompanyServiceImp().login(username, password);
+			System.out.print(username);System.out.print("\t\t");System.out.println(password);
+			
 			if(company == null){
 				response.sendRedirect("login.jsp");
 			}else {

@@ -102,7 +102,7 @@ public class UpdateServlet extends HttpServlet {
 			}
 			
 		}
-		if("business".equals(type)){
+		if("company".equals(type)){
 			String location = request.getParameter("location");
 			Company new_company = new Company(
 					company.getId(),company.getUsername(),company.getPassword(), name, phone, email, location, trade, salary, tip,company.getPubtime());

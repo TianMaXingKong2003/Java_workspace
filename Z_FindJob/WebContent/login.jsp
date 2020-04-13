@@ -58,15 +58,16 @@
                     </p><br>
                     <label style="font-size:16px">&nbsp;类&nbsp;&nbsp;&nbsp;型</label>
                     &nbsp;&nbsp;&nbsp;<input type="radio" value="person" name="type" checked/><label style="font-size:16px">个人
-                    <input type="radio" value="business" name="type"/><label style="font-size:16px">公司
+                    <input type="radio" value="company" name="type"/><label style="font-size:16px">公司
                     <input type="radio" value="admin" name="type"/><label style="font-size:16px">管理员
                 </div>
                 <div class="login-btn ue-clear">
-                	<input type="submit" style="width:117px;height:40px;border-radius:10px;background-color:#2E84CD;color:white" value="登录">
-                	<input type="checkbox" name="rem" id="remember"/>
-                    <label for="remember" style="font-size:15px">记住密码</label>
+                	<input type="submit" style="width:147px;height:40px;border-radius:10px;background-color:#2E84CD;color:white" value="登录">
+                	<!--<input type="checkbox" name="rem" id="remember"/>
+                	  
+                    <label for="remember" style="font-size:15px">记住密码</label>-->
                       <a style="font-size:15px;position:relative;left:100px"  href="javascript:void(0)" onclick="tiaozhuan()">
-                      <label>&nbsp;&nbsp;&nbsp;&nbsp;点击注册</label></a>
+                      <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击注册</label></a>
                 </div>
                    
             </div>

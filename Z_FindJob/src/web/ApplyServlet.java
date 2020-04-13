@@ -5,31 +5,15 @@ import java.io.PrintWriter;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bean.Employee;
+import cn.itcast.domain.Employee;
 import service.imp.IEmployeeServiceImp;
 
-//import java.io.IOException;
-//import java.io.PrintWriter;
-//
-//import javax.servlet.Servlet;
-//import javax.servlet.ServletException;
-//import javax.servlet.http.HttpServlet;
-//import javax.servlet.http.HttpServletResponse;
-//
-//import org.apache.catalina.servlet4preview.http.HttpServletRequest;
-//
-//import wyp.bean.Employee;
-//import wyp.service.imp.IEmployeeServiceImp;
-
-
-
-/**
- * Servlet implementation class ApplyServlet
- */
+@WebServlet("/applyServlet")
 public class ApplyServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
        
@@ -52,7 +36,7 @@ public class ApplyServlet extends HttpServlet implements Servlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	//鐢宠鍏徃
+	//申请公司
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
@@ -64,9 +48,9 @@ public class ApplyServlet extends HttpServlet implements Servlet {
 		Employee employee = iEmployeeServiceImp.query(p_id, c_id);
 		if(employee==null){
 			 iEmployeeServiceImp.insert(p_id, c_id);
-			 out.println("alert('鐢宠鎴愬姛')");
+			 out.println("alert('申请成功')");
 		}else{
-			 out.println("alert('鎮ㄥ凡鐢宠杩囪鍏徃锛佷笉鑳介噸澶嶇敵璇凤紒')");
+			 out.println("alert('您已申请过该公司！不能重复申请！')");
 		}
 		out.println("window.open ('"+request.getContextPath()+"/index.jsp','_top')"); 
 	    out.println("</script>");

@@ -66,10 +66,12 @@ public class PublishServlet extends HttpServlet {
 		
 		if("person".equals(type)){
 			Person person = (Person) session.getAttribute("person");
-			
-			if(person.getPubtime()!=null){
+			  Date flag = person.getPubtime();
+			System.out.println(flag==null);
+			if(flag!=null){
 				out.println("alert('您已发布过简历！不能重复发布！')");
 			}else{
+				
 				person.setPubtime(date);
 				new IPersonServiceImp().publish(person);
 				session.setAttribute("person", person);
@@ -79,9 +81,12 @@ public class PublishServlet extends HttpServlet {
 			out.println("window.open ('"+request.getContextPath()+"/index.jsp','_top')");
 		}
 		
-		if("business".equals(type)){
+		if("company".equals(type)){
 			Company company = (Company) session.getAttribute("company");
-			if(company.getPubtime()!=null){
+			Date flag = company.getPubtime();
+			System.out.println(flag==null);
+			
+			if(flag!=null){
 				out.println("alert('您已发布过招聘信息！不能重复发布！')");
 			}else{
 				company.setPubtime(date);

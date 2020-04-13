@@ -72,6 +72,8 @@ public class ListServlet extends HttpServlet {
 	    out.println("<html>");      
 	    out.println("<script>"); 
 	    
+	    System.out.println(type);
+	    
 		if("person".equals(type)){
 			
 			List<Company> companies = new ICompanyServiceImp().listAllCompaniesByParams(map);
@@ -79,7 +81,7 @@ public class ListServlet extends HttpServlet {
 		    out.println("window.open ('"+request.getContextPath()+"/index.jsp?source=listServlet','_top')"); 
 	    }
 		
-		if("busine".equals(type)){
+		if("company".equals(type)){
 			
 			List<Person> persons = new IPersonServiceImp().listAllPersonsByParams(map);
 			servletContext.setAttribute("persons", persons);

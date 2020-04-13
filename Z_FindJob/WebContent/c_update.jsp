@@ -48,7 +48,7 @@
     	<label>公司简介：</label>
         <textarea name="tip" style="height:150px">${company.tip }</textarea>
     </p>
-    <input name="type" type="hidden" value="公司">
+    <input name="type" type="hidden" value="company">
     <div class="btn ue-clear">
 		<input style="height:50px;width:150px;background-color:#68B86C;color:white;border-radius:10px" type="submit" value="修改"/>
 	</div>

@@ -76,7 +76,7 @@
             <label>学校：</label>
         	<input style="width:195px;height:25px;border:1px solid #C5D6E0" name="school" type="text">
         </div>
-        <input name="type" type="hidden" value="公司">
+        <input name="type" type="hidden" value="company">
     </div>
     <div class="query-btn ue-clear">
 		<input style="background-color:#68B86C;color:white;border-radius:10px" type="submit" value="查询"/>

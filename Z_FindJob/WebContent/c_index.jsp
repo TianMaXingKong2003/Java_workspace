@@ -32,8 +32,8 @@
                 <ul class="nav">
                 	<li class="index"><div class="nav-header"><a href="javascript:;" date-src="c_query.jsp" class="ue-clear"><span>首页</span></a></div></li>
                     <li class="modify"><div class="nav-header"><a href="javascript:;" date-src="c_update.jsp"class="ue-clear"><span>公司信息修改</span></a></div>
-                    <li class="publish"><div class="nav-header"><a href="javascript:;" date-src="publishServlet?type=公司" class="ue-clear"><span>发布招聘信息</span></a></div></li>
-                    <li class="delete"><div class="nav-header"><a href="javascript:;" date-src="cancleServlet?type=公司" class="ue-clear"><span>撤销招聘信息</span></a></div></li>
+                    <li class="publish"><div class="nav-header"><a href="javascript:;" date-src="publishServlet?type=company" class="ue-clear"><span>发布招聘信息</span></a></div></li>
+                    <li class="delete"><div class="nav-header"><a href="javascript:;" date-src="cancleServlet?type=company" class="ue-clear"><span>撤销招聘信息</span></a></div></li>
                 	<li class="email"><div class="nav-header"><a href="javascript:;" date-src="candidate.jsp" class="ue-clear"><span>求职者通知</span></a></div></li>
                  </ul>
             </div>

@@ -13,7 +13,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import cn.itcast.dao.IPersonDao;
 import cn.itcast.domain.Person;
-import cn.itcast.domain.User;
 import cn.itcast.util.JDBCUtils;
 import service.IPersonService;
 import tools.MyBatisSqlSessionFactory;
@@ -49,14 +48,14 @@ public class IPersonServiceImp implements IPersonService {
 			//存储该用户
 
 //        	//获取系统时间——注册时间
-        	SimpleDateFormat sdf_Time=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        	String registerTime=sdf_Time.format(new Date());
+//        	SimpleDateFormat sdf_Time=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        	String registerTime=sdf_Time.format(new Date());
     		
-        	String InsertSql="INSERT INTO person VALUES ( id, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, STR_TO_DATE( ?, '%Y-%m-%d %H:%i:%s'), ?)";
+        	String InsertSql="INSERT INTO person VALUES ( id, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         	template.update(InsertSql,person.getUsername(),person.getPassword(),person.getName(),
         											person.getSex(),person.getBirthday(),person.getSchool(),
         											person.getPhone(),person.getEmail(),person.getTrade(),
-        											person.getSalary(),person.getTip(),registerTime,person.getEducation());
+        											person.getSalary(),person.getTip(),null,person.getEducation());
 			return true;
 		}else{
 			return false;
@@ -101,7 +100,7 @@ public class IPersonServiceImp implements IPersonService {
 	@Override
 	public void update(Person person) {
 		
-    	System.out.println("开始存储对象");
+    	System.out.println("开始修改信息");
 		//存储该用户
     	
 
@@ -115,40 +114,114 @@ public class IPersonServiceImp implements IPersonService {
 
 	}
 
+	 /**
+     * 发布简历	测试通过
+     * @param person
+     * @return 
+     */
 	@Override
 	public void publish(Person person) {
 		// TODO Auto-generated method stub
-		SqlSession session = MyBatisSqlSessionFactory.getSqlSessionFactory();
-		IPersonDao personDao = session.getMapper(IPersonDao.class);
-		personDao.udpatePubtime(person);
-		session.commit();
+
+		System.out.println("发布简历方法调用");
+		//存储该用户
+    	//update person set pubtime=#{pubtime,jdbcType=TIMESTAMP}		where id=#{id}
+		
+//    	//获取系统时间——注册时间
+    	SimpleDateFormat sdf_Time=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	String publishTime=sdf_Time.format(new Date());
+
+		String InsertSql="UPDATE person SET PUBTIME=STR_TO_DATE( ?, '%Y-%m-%d %H:%i:%s')  WHERE USERNAME=?";
+		
+		
+    	template.update(InsertSql,publishTime,person.getUsername());
+		
 	}
 
+	/**
+     * 撤销简历	测试通过
+     * @param person
+     * @return 
+     */
 	@Override
 	public void deleteResume(Person person) {
 		// TODO Auto-generated method stub
-		SqlSession session = MyBatisSqlSessionFactory.getSqlSessionFactory();
-		IPersonDao personDao = session.getMapper(IPersonDao.class);
-		personDao.ZeroPubtime(person);
-		session.commit();
+
+		System.out.println("撤销简历方法调用");
+
+		String InsertSql="UPDATE person SET PUBTIME=STR_TO_DATE( ?, '%Y-%m-%d %H:%i:%s')  WHERE USERNAME=?";
+		
+    	template.update(InsertSql,null,person.getUsername());
+		
 	}
 
+	
+	/* 显示所有招聘者的简历信息	测试通过
+	 * 返回List集合
+	 */
 	@Override
 	public List<Person> listAllPersons() {
 		// TODO Auto-generated method stub
-		SqlSession session = MyBatisSqlSessionFactory.getSqlSessionFactory();
-		IPersonDao personDao = session.getMapper(IPersonDao.class);
-		List<Person> persons = personDao.findAllPersons();
-		return persons;
+		
+		try {
+            //1.编写sql
+            String sql = "select * from person where pubtime is not null order by pubtime desc";
+            //2.调用list方法
+           
+            List<Person> persons = template.query(sql,  
+                    new BeanPropertyRowMapper<Person>(Person.class));  
+
+    		return persons;
+            
+        } catch (DataAccessException e) {
+            //e.printStackTrace();//记录日志
+            return null;
+        }
 	}
 
+	
+	/* 带参数显示所有招聘者的简历信息	测试通过
+	 * 返回List集合
+	 */
 	@Override
 	public List<Person> listAllPersonsByParams(Map<String, String> map) {
 		// TODO Auto-generated method stub
-		SqlSession session = MyBatisSqlSessionFactory.getSqlSessionFactory();
-		IPersonDao personDao = session.getMapper(IPersonDao.class);
-		List<Person> persons = personDao.findPersonsByParams(map);
-		return persons;
+		
+		try {
+			 //1.编写sql
+	        String sql = "select * from person where pubtime is not null ";
+	        
+	        for(Map.Entry<String, String> entry : map.entrySet()){
+	            String mapKey = entry.getKey();
+	            String mapValue = entry.getValue();
+	            //System.out.println(mapKey+":"+mapValue);
+	            
+	            if("trade".equals(mapKey))		sql+=" and trade="+"\""+mapValue+"\"";
+	            
+	            if("school".equals(mapKey))	sql+=" and school="+"\""+mapValue+"\"";
+	            
+	            if("salary".equals(mapKey))		sql+=" and salary="+"\""+mapValue+"\"";
+	            
+	            if("pubtime".equals(mapKey))		sql+=" and STR_TO_DATE( "+mapValue+", '%Y-%m-%d %H:%i:%s') ";
+	        }
+	        
+//	        System.out.println(sql);
+//	        
+//	        System.out.println("\"\"");       //利用转义字符
+	        
+           //2.调用list方法
+          
+           List<Person> persons = template.query(sql,  
+                   new BeanPropertyRowMapper<Person>(Person.class));  
+         
+         //System.out.println("查看返回的结果");
+         
+   		return persons;
+           
+       } catch (DataAccessException e) {
+           //e.printStackTrace();//记录日志
+           return null;
+       }
 	}
 
 	@Override

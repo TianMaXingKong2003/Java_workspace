@@ -2,21 +2,22 @@ package web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Company;
-import bean.Person;
+import cn.itcast.domain.Company;
+import cn.itcast.domain.Person;
 import service.imp.ICompanyServiceImp;
 import service.imp.IPersonServiceImp;
 
-/**
- * Servlet implementation class PersonPublishServlet
- */
+@WebServlet("/cancleServlet")
+
 public class CancleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -41,37 +42,54 @@ public class CancleServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//瑙ｅ喅涓枃涔辩爜闂
-		String type = new String (request.getParameter("type").getBytes("ISO-8859-1"),"UTF-8");
+
+		//1.同步编码格式，防止中文乱码
+		response.setContentType("text/html;charset=utf-8");   
+		request.setCharacterEncoding("utf-8"); 
+		response.setCharacterEncoding("utf-8"); 
+		
+		String type=request.getParameter("type");
+		
+		System.out.println("publishServlet");
+		System.out.println(type);
 		
 		HttpSession session = request.getSession();
 		//String type = request.getParameter("type");
 		PrintWriter out = response.getWriter();
 	    out.println("<html>");      
 	    out.println("<script>");
-	    //鎾ら攢绠�鍘�
-		if("涓汉".equals(type)){
+	    
+	    
+	    //撤销简历
+		if("person".equals(type)){	
 			Person person = (Person) session.getAttribute("person");
-			if(person.getPubtime()==null){
-				out.println("alert('鎮ㄨ繕鏈竷杩囩畝鍘嗭紒')");
+			Date flag = person.getPubtime();
+			System.out.println(flag==null);
+			
+			if(flag==null){
+				out.println("alert('您还未布过简历！')");
 			}else{
 				new IPersonServiceImp().deleteResume(person);
 				person.setPubtime(null);
 				session.setAttribute("person", person);
-				out.println("alert('鎾ら攢鎴愬姛锛�')");
+				out.println("alert('撤销成功！')");
 			}
 			out.println("window.open ('"+request.getContextPath()+"/index.jsp','_top')");
 		}
 		
-		if("鍏徃".equals(type)){
+		if("company".equals(type)){
+			
 			Company company = (Company) session.getAttribute("company");
-			if(company.getPubtime()==null){
-				out.println("alert('鎮ㄨ繕鏈竷杩囨嫑鑱樹俊鎭紒')");
+			Date flag = company.getPubtime();
+			System.out.println(flag==null);
+			
+			if(flag==null){
+				out.println("alert('您还未布过招聘信息！')");
 			}else{
 				new ICompanyServiceImp().deleteInfo(company);
 				company.setPubtime(null);
 				session.setAttribute("company", company);
-				out.println("alert('鎾ら攢鎴愬姛锛�')");
+				out.println("alert('撤销成功！')");
 			}
 			out.println("window.open ('"+request.getContextPath()+"/c_index.jsp','_top')");    
 		}
