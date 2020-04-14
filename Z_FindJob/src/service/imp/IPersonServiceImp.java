@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import cn.itcast.dao.IPersonDao;
+import cn.itcast.domain.Company;
 import cn.itcast.domain.Person;
 import cn.itcast.util.JDBCUtils;
 import service.IPersonService;
@@ -103,6 +104,8 @@ public class IPersonServiceImp implements IPersonService {
     	System.out.println("开始修改信息");
 		//存储该用户
     	
+    	
+    	System.out.println(person.getSex());
 
 		String InsertSql="UPDATE person SET NAME=? ,SEX=? ,BIRTHDAY=? ,SCHOOL=? ,PHONE=? ,EMAIL=? ,TRADE=? ,"+
 		"SALARY=? ,TIP=? ,EDUCATION=?  WHERE USERNAME=?";
@@ -224,13 +227,32 @@ public class IPersonServiceImp implements IPersonService {
        }
 	}
 
+	/**
+     * 通过id查找求职者	测试通过
+     * @param person
+     * @return 
+     */
 	@Override
 	public Person query(long id) {
 		// TODO Auto-generated method stub
-		SqlSession session = MyBatisSqlSessionFactory.getSqlSessionFactory();
-		IPersonDao personDao = session.getMapper(IPersonDao.class);
-		Person person = personDao.findPersonById(id);
-		return person;
+		try {
+            //1.编写sql
+            String sql = "select * from person where id = ?";
+            //2.调用query方法
+            
+            Person person = template.queryForObject(sql,
+                    new BeanPropertyRowMapper<Person>(Person.class),id);
+
+            System.out.println("查询成功");
+            return person;
+            
+            
+        } catch (DataAccessException e) {
+            //e.printStackTrace();//记录日志
+        	System.out.println("查询失败");
+            return null;
+        }
+		
 	}
 
 	public void deleteInfo(Person person) {

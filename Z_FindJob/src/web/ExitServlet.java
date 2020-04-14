@@ -3,14 +3,14 @@ package web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class ExitServlet
- */
+
+@WebServlet("/exitServlet")
 public class ExitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,10 +29,10 @@ public class ExitServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String type = request.getParameter("type");
-		if("个人".equals(type)){
+		if("person".equals(type)){
 			session.removeAttribute("person");
 		}
-		if("公司".equals(type)){
+		if("company".equals(type)){
 			session.removeAttribute("company");
 		}
 		response.sendRedirect("login.jsp");

@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
-<fullyQualifiedTypeName name="javax.websocket.Session"/>
-<fullyQualifiedTypeName name="org.apache.catalina.Session"/>
-<fullyQualifiedTypeName name="com.itheima.util.C3P0Util"/>
-<fullyQualifiedTypeName name="javax.servlet.Servlet"/>
-<fullyQualifiedTypeName name="javax.media.Player"/>
-<fullyQualifiedTypeName name="javax.media.Manager"/>
 <fullyQualifiedTypeName name="com.xu.music.player.player.XMusic"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.metal.MetalBorders.PaletteBorder"/>
 <fullyQualifiedTypeName name="java.awt.FileDialog"/>
@@ -54,10 +47,17 @@
 <fullyQualifiedTypeName name="cn.itcast.domain.Person"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.compiler.Template"/>
 <fullyQualifiedTypeName name="org.springframework.jdbc.core.BeanPropertyRowMapper"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="com.sun.media.jfxmedia.track.Track.Encoding"/>
 <fullyQualifiedTypeName name="com.bookms.model.Book"/>
 <fullyQualifiedTypeName name="com.bookms.view.BookTypeAddInterFrm"/>
+<fullyQualifiedTypeName name="com.supermarket.view.MainPage_user"/>
+<fullyQualifiedTypeName name="com.supermarket.view.UserManageInterFrm"/>
+<fullyQualifiedTypeName name="com.supermarket.dao.UserDao"/>
+<fullyQualifiedTypeName name="javax.jws.soap.SOAPBinding.Use"/>
+<fullyQualifiedTypeName name="com.supermarket.model.User"/>
+<fullyQualifiedTypeName name="com.supermarket.dao.UserDao_Implement"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

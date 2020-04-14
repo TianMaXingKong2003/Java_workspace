@@ -32,7 +32,11 @@
 <body>
 	<% 
 		long c_id = ((Company)session.getAttribute("company")).getId();
+	
+	System.out.println("search candidate by "+c_id);
+	
 		List<Person> persons= new IEmployeeServiceImp().candidateQuery(c_id);
+		
 		if(persons==null){
 			out.println("暂无应聘者");
 		}else{
@@ -57,7 +61,14 @@
 				for(Person p:persons){
 					count++;
 					long p_id = p.getId();
-					Employee employee = new IEmployeeServiceImp().query(p_id, c_id);
+					
+					Employee employee =null;
+					employee= new IEmployeeServiceImp().query(p_id, c_id);
+					
+					System.out.println("test2--->"+employee==null+"\t");
+					System.out.println(p_id+"\t\t"+c_id);
+					
+					
 					long id = employee.getId();
 					long isAgreed = employee.getIsAgreed();
 			%>	

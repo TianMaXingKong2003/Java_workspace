@@ -14,7 +14,7 @@ import service.imp.IEmployeeServiceImp;
 /**
  * Servlet implementation class InformServlet
  */
-@WebServlet("/InformServlet")
+@WebServlet("/informServlet")
 public class InformServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,13 +39,19 @@ public class InformServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//1.同步编码格式，防止中文乱码
+		response.setContentType("text/html;charset=utf-8");   
+		request.setCharacterEncoding("utf-8"); 
+		response.setCharacterEncoding("utf-8"); 
+		
 		long id = Long.parseLong(request.getParameter("id"));
 		long isAgreed = Long.parseLong(request.getParameter("isAgreed"));
 		new IEmployeeServiceImp().update(isAgreed,id);
 		PrintWriter out = response.getWriter();
 	    out.println("<html>");      
 	    out.println("<script>");
-		out.println("alert('鍙戦�佹垚鍔燂紒')"); 
+	    out.println("alert('发送成功！')"); 
 		out.println("window.open ('"+request.getContextPath()+"/c_index.jsp','_top')"); 
 	    out.println("</script>");
 	    out.println("</html>");      

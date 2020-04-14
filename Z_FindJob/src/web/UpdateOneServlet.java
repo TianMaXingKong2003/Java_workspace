@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,9 +15,7 @@ import cn.itcast.domain.Company;
 import cn.itcast.domain.Person;
 import service.imp.ICompanyServiceImp;
 
-/**
- * Servlet implementation class UpdateOneServlet
- */
+@WebServlet("/updateOneServlet")
 public class UpdateOneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -59,7 +58,7 @@ public class UpdateOneServlet extends HttpServlet {
 			List<Company> companyList=new ICompanyServiceImp().listAllCompanies();
 			session.setAttribute("companyList", companyList);
 			session.setAttribute("admin",person);
-			out.println("alert('Âà†Èô§ÊàêÂäü')");
+			out.println("alert('…æ≥˝≥…π¶')");
 			out.println("window.open ('"+request.getContextPath()+"/a_index.jsp','_top')"); 
 		}
 	

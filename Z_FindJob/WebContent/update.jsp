@@ -27,7 +27,7 @@
     	<label>*姓名：</label>
         <input name="name" type="text" value="${person.name }"/>
     </p>
-    <p class="short-input ue-clear" id="xingbie">
+    <p class="short-input ue-clear" id="xingbie" >
     	<label>*性别：</label>
     </p>
     <p class="short-input ue-clear">

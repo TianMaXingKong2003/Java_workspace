@@ -5,19 +5,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.session.SqlSession;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
-
-import cn.itcast.dao.ICompanyDao;
 import cn.itcast.domain.Company;
-import cn.itcast.domain.Person;
 import cn.itcast.util.JDBCUtils;
 import service.ICompanyService;
-import tools.MyBatisSqlSessionFactory;
+
 
 public class ICompanyServiceImp implements ICompanyService{
 

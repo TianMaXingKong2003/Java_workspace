@@ -32,7 +32,14 @@
 <body>
 	<% 
 		long p_id = ((Person)session.getAttribute("person")).getId();
+		
+		System.out.println("Search companys by "+p_id);
+	
 		List<Company> companys = new IEmployeeServiceImp().companyQuery(p_id);
+		
+		System.out.println("companys is null ?");
+		System.out.println(companys==null);
+		
 		if(companys==null){
 			out.println("暂无通知");
 		}else{

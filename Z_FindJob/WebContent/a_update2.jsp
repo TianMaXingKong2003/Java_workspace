@@ -59,7 +59,7 @@
     	<label>个人评价：</label>
         <textarea name="tip" >${person.tip }</textarea>
     </p>
-    <input name="type" type="hidden" value="个人">
+    <input name="type" type="hidden" value="person">
     <input name="type2" type="hidden" value="admin">
     <div class="btn ue-clear">
 		<input style="height:50px;width:150px;background-color:#68B86C;color:white;border-radius:10px" type="submit" value="修改"/>

@@ -49,6 +49,8 @@ public class UpdateServlet extends HttpServlet {
 		Person person = (Person) session.getAttribute("person");
 		Company company = (Company) session.getAttribute("company");
 		String name = request.getParameter("name");
+		String sex = request.getParameter("sex"); 
+		String birthday = request.getParameter("birthday");
 		String school = request.getParameter("school");
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
@@ -65,24 +67,24 @@ public class UpdateServlet extends HttpServlet {
 	    
 	    System.out.println("updateServlet");
 	    
-	    String sex = request.getParameter("xingbie");
 	    
-		String birthday = request.getParameter("birthday");
 	    
-//	    System.out.println(person.getId());
-//		System.out.println(person.getUsername());
-//		System.out.println(person.getPassword());
-//		System.out.println(name);
-//		System.out.println(sex);
-//		System.out.println(birthday);
-//		System.out.println(phone);
-//		System.out.println(email);
-//		System.out.println(school);
-//		System.out.println(education);
-//		System.out.println(trade);
-//		System.out.println(salary);
-//		System.out.println(tip);
-//		System.out.println(person.getPubtime());
+		System.out.println("------------");
+	    System.out.println(person.getId());
+		System.out.println(person.getUsername());
+		System.out.println(person.getPassword());
+		System.out.println(name);
+		System.out.println(sex);
+		System.out.println(birthday);
+		System.out.println(phone);
+		System.out.println(email);
+		System.out.println(school);
+		System.out.println(education);
+		System.out.println(trade);
+		System.out.println(salary);
+		System.out.println(tip);
+		System.out.println(person.getPubtime());
+		System.out.println("------------");
 	    
 		if("person".equals(type)){
 			
@@ -91,8 +93,10 @@ public class UpdateServlet extends HttpServlet {
 			
 			System.out.println("ÐÞ¸ÄÄÚÈÝ");
 			
-			new IPersonServiceImp().update(person);
+			new IPersonServiceImp().update(new_person);
+			
 			if("admin".equals(type2)) {
+				//session.setAttribute("person", new_person);
 				out.println("alert('Success!')");
 				out.println("window.open ('"+request.getContextPath()+"/a_index.jsp','_top')");
 			}else {

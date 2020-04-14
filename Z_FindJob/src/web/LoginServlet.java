@@ -69,7 +69,7 @@ public class LoginServlet extends HttpServlet {
 			Person person =null;
 			person = new IPersonServiceImp().login(username, password);
 			System.out.print(username);System.out.print("\t\t");System.out.println(password);
-				
+			System.out.println(person == null);
 			if(person == null){
 				
 				response.sendRedirect("login.jsp");

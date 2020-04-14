@@ -39,6 +39,12 @@ public class ApplyServlet extends HttpServlet implements Servlet {
 	//申请公司
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//1.同步编码格式，防止中文乱码
+		response.setContentType("text/html;charset=utf-8");   
+		request.setCharacterEncoding("utf-8"); 
+		response.setCharacterEncoding("utf-8"); 
+		
 		PrintWriter out = response.getWriter();
 		out.println("<html>");      
 		out.println("<script>");
@@ -46,6 +52,7 @@ public class ApplyServlet extends HttpServlet implements Servlet {
 		long c_id = Long.parseLong(request.getParameter("c_id"));
 		IEmployeeServiceImp iEmployeeServiceImp = new IEmployeeServiceImp();
 		Employee employee = iEmployeeServiceImp.query(p_id, c_id);
+		
 		if(employee==null){
 			 iEmployeeServiceImp.insert(p_id, c_id);
 			 out.println("alert('申请成功')");
