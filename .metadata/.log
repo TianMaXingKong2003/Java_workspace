@@ -1,4 +1,4 @@
-!SESSION 2020-04-14 12:33:58.275 -----------------------------------------------
+!SESSION 2020-07-30 09:08:14.661 -----------------------------------------------
 eclipse.buildId=4.10.0.I20181206-0815
 java.version=1.8.0_191
 java.vendor=Oracle Corporation
@@ -7,49 +7,38 @@ Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
 This is a continuation of log file E:\Java_workspace\.metadata\.bak_0.log
-Created Time: 2020-04-14 17:23:49.661
+Created Time: 2020-07-30 09:30:35.407
 
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 17:23:49.663
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2020-07-30 09:30:35.407
+!MESSAGE Connection to http://jope.ow2.org/update/jope/p2.index failed on jope.ow2.org. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: jope.ow2.org
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:263)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:162)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.net 1 0 2020-07-30 09:31:23.483
 !MESSAGE System property http.proxyHost is not set but should be 127.0.0.1.
 
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 17:23:49.665
+!ENTRY org.eclipse.core.net 1 0 2020-07-30 09:31:23.499
 !MESSAGE System property http.proxyPort is not set but should be 7890.
 
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 17:53:49.719
-!MESSAGE System property http.proxyHost is not set but should be 127.0.0.1.
-
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 17:53:49.721
-!MESSAGE System property http.proxyPort is not set but should be 7890.
-
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 18:23:49.726
-!MESSAGE System property http.proxyHost is not set but should be 127.0.0.1.
-
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 18:23:49.728
-!MESSAGE System property http.proxyPort is not set but should be 7890.
-
-!ENTRY org.eclipse.jface.text 2 0 2020-04-14 18:28:10.281
-!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
-
-!ENTRY org.eclipse.jface.text 2 0 2020-04-14 18:28:10.353
-!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
-
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 18:53:49.746
-!MESSAGE System property http.proxyHost is not set but should be 127.0.0.1.
-
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 18:53:49.748
-!MESSAGE System property http.proxyPort is not set but should be 7890.
-
-!ENTRY org.eclipse.jface.text 2 0 2020-04-14 19:05:17.918
-!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
-
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 19:23:49.800
-!MESSAGE System property http.proxyHost is not set but should be 127.0.0.1.
-
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 19:23:49.802
-!MESSAGE System property http.proxyPort is not set but should be 7890.
-
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 19:37:32.607
-!MESSAGE System property http.proxyHost is not set but should be 127.0.0.1.
-
-!ENTRY org.eclipse.core.net 1 0 2020-04-14 19:37:32.608
-!MESSAGE System property http.proxyPort is not set but should be 7890.
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2020-07-30 09:31:24.700
+!MESSAGE No remedy found

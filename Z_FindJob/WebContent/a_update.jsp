@@ -35,7 +35,7 @@
         <input name="phone" type="text" value="${company.phone }"/>
     </p>
     <p class="long-input ue-clear">
-    	<label>电子邮箱：</label>
+    	<label>*电子邮箱：</label>
         <input name="email" type="text" value="${company.email }"/>
     </p>
     <div class="short-input select ue-clear" id="zhuanye">
@@ -120,8 +120,13 @@ $( "#fm" ).validate({
 	         required:true
         },
         phone: {
-      	  required:true  
-	    }
+      	  required:true,
+      	  number:true
+	    },
+	    email:{
+			required:true,
+			email:true
+		}
     },
     messages: {
         name: {
@@ -131,8 +136,13 @@ $( "#fm" ).validate({
             required: "*不能为空！"
 	    },
 	    phone: {
-	        required: "*不能为空！"
-		}
+	        required: "*不能为空！",
+	        number:"请输入正确联系方式!"
+		},
+		email:{
+			required:"*邮箱不能为空!",
+			email:"邮箱格式不正确!"
+	   }
     }
 });
 </script>

@@ -1,5 +1,6 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.util.*,cn.itcast.domain.*,service.imp.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
@@ -23,6 +24,12 @@ table td {
 </style>
 </head>
 <body>
+<% 
+	if(request.getParameter("source")==null){
+		List<Person> persons = new IPersonServiceImp().listAllPersons();
+		application.setAttribute("persons", persons);
+	}
+%>
 	<div id="tableAll">
 		<table class="table table-hover table-bordered" border="1">
 			<tr class="info">
@@ -36,7 +43,7 @@ table td {
 				
 				<td colspan="2">操作</td>
 			</tr>
-			<c:forEach items="${personList}" var="person">
+			<c:forEach items="${persons}" var="person">
 				<tr class="table table-hover">
 					<td>${person.name}</td>
 					<td>${person.trade }</td>

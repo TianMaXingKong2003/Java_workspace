@@ -172,8 +172,13 @@
 	        	  required:true 
 	          },
 	          phone: {
-	        	  required:true  
-		      }
+	        	  required:true,
+	        	  number:true
+		      },
+	          email:{
+					required:true,
+					email:true
+				}
 	      },
 	      messages: {
 	          name: {
@@ -186,7 +191,12 @@
 	              required: "*不能为空！"
 		      },
 		      phone: {
-		          required: "*不能为空！"
+		          required: "*不能为空！",
+		          number:"请输入正确联系方式!"
+			  },
+		      email:{
+					required:"*邮箱不能为空!",
+					email:"邮箱格式不正确!"
 			  }
 	      }
 	  });

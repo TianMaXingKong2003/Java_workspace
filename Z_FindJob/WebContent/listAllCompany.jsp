@@ -1,5 +1,6 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.util.*,cn.itcast.domain.*,service.imp.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
@@ -23,6 +24,14 @@ table td {
 </style>
 </head>
 <body>
+<% 	//第一次进query.jsp页面，显示所有公司的招聘信息
+	if(request.getParameter("source")==null)
+	{	
+		List<Company> companies = new ICompanyServiceImp().listAllCompanies();
+		application.setAttribute("companies", companies);
+	}
+%>
+
 	<div id="tableAll">
 		<table class="table table-hover table-bordered" border="1">
 			<tr class="info">
@@ -36,7 +45,7 @@ table td {
 				
 				<td colspan="2">操作</td>
 			</tr>
-			<c:forEach items="${companyList}" var="company">
+			<c:forEach items="${companies}" var="company">
 				<tr class="table table-hover">
 					<td>${company.name}</td>
 					<td>${company.location }</td>

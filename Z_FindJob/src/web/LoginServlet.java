@@ -62,16 +62,20 @@ public class LoginServlet extends HttpServlet {
 		
 		System.out.println(type);
 		System.out.println("LoginServlet");
-		
+		System.out.println(username.equals("admin"));
 		
 		if("person".equals(type)){
+			
+			if (username.equals("admin")) {
+				response.sendRedirect("login.jsp");
+				return;
+			}
 			
 			Person person =null;
 			person = new IPersonServiceImp().login(username, password);
 			System.out.print(username);System.out.print("\t\t");System.out.println(password);
 			System.out.println(person == null);
 			if(person == null){
-				
 				response.sendRedirect("login.jsp");
 			}else {
 				session.setAttribute("person",person);
@@ -91,8 +95,14 @@ public class LoginServlet extends HttpServlet {
 				response.sendRedirect("c_index.jsp");
 			}
 		}
+		
+		
 		if("admin".equals(type)){
-			Person person = new IPersonServiceImp().login(username, password);
+			System.out.println("您好管理员登录");
+			Person person =null;
+			person = new IPersonServiceImp().login(username, password);
+			System.out.println(person == null);
+			
 			if(person == null){
 				response.sendRedirect("login.jsp");
 			}else if("admin".equals(person.getPhone())){

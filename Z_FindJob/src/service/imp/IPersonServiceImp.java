@@ -6,17 +6,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.session.SqlSession;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import cn.itcast.dao.IPersonDao;
-import cn.itcast.domain.Company;
+
 import cn.itcast.domain.Person;
 import cn.itcast.util.JDBCUtils;
 import service.IPersonService;
-import tools.MyBatisSqlSessionFactory;
+
 
 public class IPersonServiceImp implements IPersonService {
 	
@@ -255,12 +254,23 @@ public class IPersonServiceImp implements IPersonService {
 		
 	}
 
+	
+	/**
+     * 通过id删除求职者发布信息		测试通过
+     * @param person
+     * @return 
+     */
 	public void deleteInfo(Person person) {
 		// TODO Auto-generated method stub
-		SqlSession session = MyBatisSqlSessionFactory.getSqlSessionFactory();
-		IPersonDao personDao = session.getMapper(IPersonDao.class);
-		personDao.ZeroPubtime(person);
-		session.commit();
+		
+		//update person set pubtime=null	where id=#{id}
+		
+		System.out.println("通过id删除求职者发布信息");
+
+		String InsertSql="update person set pubtime=null	 where id=?";
+		
+    	template.update(InsertSql,person.getId());
+		
 	}
 
 	

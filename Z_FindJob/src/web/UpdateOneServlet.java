@@ -39,6 +39,12 @@ public class UpdateOneServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//1.同步编码格式，防止中文乱码
+		response.setContentType("text/html;charset=utf-8");   
+		request.setCharacterEncoding("utf-8"); 
+		response.setCharacterEncoding("utf-8"); 
+		
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		Person person = (Person) session.getAttribute("person");

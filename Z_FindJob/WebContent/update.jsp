@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class="title">
-	<h2>个人信息修改(*为必填项)</h2>
+	<h2>个人的信息修改(*为必填项)</h2>
 </div>		
 <form id="fm" method="post" action="/Z_FindJob/updateServlet">
 <div class="main">
@@ -171,8 +171,13 @@
 	        	  required:true 
 	          },
 	          phone: {
-	        	  required:true  
-		      }
+	        	  required:true,
+	        	  number:true
+		      },
+	          email:{
+					required:true,
+					email:true
+				}
 	      },
 	      messages: {
 	          name: {
@@ -185,7 +190,12 @@
 	              required: "*不能为空！"
 		      },
 		      phone: {
-		          required: "*不能为空！"
+		          required: "*不能为空！",
+		          number:"请输入正确联系方式!"
+			  },
+		      email:{
+					required:"*邮箱不能为空!",
+					email:"邮箱格式不正确!"
 			  }
 	      }
 	  });

@@ -18,7 +18,7 @@
         	<div class="top-light"></div>
             <h1 class="logo"></h1>
             <div class="login-info ue-clear">
-                <div class="welcome ue-clear"><span>欢迎您,admin</span><a href="javascript:;" class="user-name">${company.username }</a></div>
+                <div class="welcome ue-clear"><span>欢迎您,admin</span><a href="javascript:;" class="user-name"></a></div>
             </div>
             <div class="toolbar ue-clear">
                 <a href="javascript:;" class="quit-btn exit"></a>

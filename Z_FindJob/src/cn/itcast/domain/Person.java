@@ -22,7 +22,7 @@ public class Person {
 	public Person() {
 		
 		super();
-		System.out.println("调用构造方法1");
+		//System.out.println("调用构造方法1");
 	}
 
 	public Person(String username, String password, String name, String sex, String birthday, String phone,
@@ -41,9 +41,9 @@ public class Person {
 		this.salary = salary;
 		this.tip = tip;
 		
-		System.out.println("调用构造方法2");
+		//System.out.println("调用构造方法2");
 		
-		System.out.println(sex);
+		//System.out.println(sex);
 	}
 
 	public Person(Long id, String username, String password, String name, String sex, String birthday, String phone,

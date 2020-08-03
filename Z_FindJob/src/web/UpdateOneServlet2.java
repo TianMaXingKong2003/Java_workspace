@@ -39,6 +39,12 @@ public class UpdateOneServlet2 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//1.同步编码格式，防止中文乱码
+		response.setContentType("text/html;charset=utf-8");   
+		request.setCharacterEncoding("utf-8"); 
+		response.setCharacterEncoding("utf-8"); 
+		
 		HttpSession session = request.getSession();
 		Person person = (Person) session.getAttribute("person");
 		String id=request.getParameter("pid");
@@ -57,7 +63,7 @@ public class UpdateOneServlet2 extends HttpServlet {
 			new IPersonServiceImp().deleteInfo(person2);
 			List<Person> personlist=new IPersonServiceImp().listAllPersons();
 			session.setAttribute("personlist", personlist);
-			session.setAttribute("admin",person);
+			session.setAttribute("admin",person2);
 			out.println("alert('删除成功')");
 			out.println("window.open ('"+request.getContextPath()+"/a_index.jsp','_top')"); 
 		}

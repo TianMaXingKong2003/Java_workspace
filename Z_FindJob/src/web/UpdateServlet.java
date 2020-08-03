@@ -43,7 +43,9 @@ public class UpdateServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		//1.同步编码格式，防止中文乱码
-		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");   
+		request.setCharacterEncoding("utf-8"); 
+		response.setCharacterEncoding("utf-8"); 
 		
 		HttpSession session = request.getSession();
 		Person person = (Person) session.getAttribute("person");
@@ -69,22 +71,22 @@ public class UpdateServlet extends HttpServlet {
 	    
 	    
 	    
-		System.out.println("------------");
-	    System.out.println(person.getId());
-		System.out.println(person.getUsername());
-		System.out.println(person.getPassword());
-		System.out.println(name);
-		System.out.println(sex);
-		System.out.println(birthday);
-		System.out.println(phone);
-		System.out.println(email);
-		System.out.println(school);
-		System.out.println(education);
-		System.out.println(trade);
-		System.out.println(salary);
-		System.out.println(tip);
-		System.out.println(person.getPubtime());
-		System.out.println("------------");
+//		System.out.println("------------");
+//	    System.out.println(person.getId());
+//		System.out.println(person.getUsername());
+//		System.out.println(person.getPassword());
+//		System.out.println(name);
+//		System.out.println(sex);
+//		System.out.println(birthday);
+//		System.out.println(phone);
+//		System.out.println(email);
+//		System.out.println(school);
+//		System.out.println(education);
+//		System.out.println(trade);
+//		System.out.println(salary);
+//		System.out.println(tip);
+//		System.out.println(person.getPubtime());
+//		System.out.println("------------");
 	    
 		if("person".equals(type)){
 			
@@ -97,11 +99,11 @@ public class UpdateServlet extends HttpServlet {
 			
 			if("admin".equals(type2)) {
 				//session.setAttribute("person", new_person);
-				out.println("alert('Success!')");
+				out.println("alert('修改成功!')");
 				out.println("window.open ('"+request.getContextPath()+"/a_index.jsp','_top')");
 			}else {
 				session.setAttribute("person", new_person);
-				out.println("alert('Success!')");
+				out.println("alert('修改成功!')");
 				out.println("window.open ('"+request.getContextPath()+"/index.jsp','_top')"); 
 			}
 			
@@ -112,11 +114,11 @@ public class UpdateServlet extends HttpServlet {
 					company.getId(),company.getUsername(),company.getPassword(), name, phone, email, location, trade, salary, tip,company.getPubtime());
 			new ICompanyServiceImp().update(new_company);
 			if("admin".equals(type2)) {
-				out.println("alert('Success!')");
+				out.println("alert('修改成功!')");
 				out.println("window.open ('"+request.getContextPath()+"/a_index.jsp','_top')"); 
 			}else {
 				session.setAttribute("company", new_company);
-				out.println("alert('Success!')");
+				out.println("alert('修改成功!')");
 				out.println("window.open ('"+request.getContextPath()+"/c_index.jsp','_top')"); 
 			}
 		}
